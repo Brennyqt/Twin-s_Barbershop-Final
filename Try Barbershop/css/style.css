@@ -1,0 +1,349 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+
+  background: linear-gradient(135deg, #454141, #f0edeb);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+/* Apply a background to the whole page */
+body {
+
+  background-size: cover;
+  /* cover the whole screen */
+  background-position: center;
+  /* centers the image */
+  background-repeat: no-repeat;
+  /* prevents repeating */
+  background-attachment: fixed;
+  /* optional: makes it stay while scrolling */
+  font-family: Arial, sans-serif;
+  /* optional: set default font */
+}
+
+/* ===== PAGES ===== */
+.page {
+  display: none;
+  max-width: 50%;
+
+}
+
+.page.active,
+.page:not(.hidden) {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 25px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  div :hover {
+    width: 300px;
+  }
+}
+
+nav .logo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f4f4f3;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: hsla(50, 93%, 48%, 0.925);
+  color: #222;
+}
+
+/* Page layout */
+#servicesPage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+  height: 100vh;
+
+}
+
+/* Card style */
+.card {
+  background: rgb(107, 27, 27);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: ease-in-out;
+}
+
+/* Buttons style */
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Sample grid */
+.sample-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  text-align: center;
+}
+
+/* Individual sample item */
+.sample-item img {
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.sample-item p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease-in-out;
+
+  button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+
+    /* smooth transition */
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background: #555;
+    transform: scale(1.05);
+    /* slight zoom */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  button:active {
+    transform: scale(0.95);
+    /* slight press effect */
+  }
+
+}
+
+.card h1,
+.card h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* ===== PRICING PAGE ===== */
+#pricingPage .card {
+  text-align: center;
+  justify-content: center;
+}
+
+#pricingPage ul {
+  list-style: disc;
+  /* Adds bullets */
+  padding-left: 20px;
+  /* Indent the list */
+  margin-top: 15px;
+  /* Space from heading */
+  color: #555;
+  /* Text color */
+  font-size: 15px;
+  /* Font size */
+  line-height: 1.6;
+  /* Spacing between items */
+  text-align: left;
+  /* Align text to left */
+}
+
+#pricingPage ul li {
+  margin-bottom: 10px;
+  /* Space between items */
+}
+
+#pricingPage button {
+  margin-top: 15px;
+  /* Space above the back button */
+}
+
+
+/* ===== INPUTS & BUTTONS ===== */
+input,
+select {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  background: #222;
+  color: white;
+  padding: 10px 18px;
+  margin: 8px 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ffcc00;
+  color: #222;
+  transform: scale(1.05);
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== PAYMENT DETAILS ===== */
+#paymentDetails {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#paymentNumber input {
+  margin-top: 5px;
+  padding: 8px;
+  width: 90%;
+  max-width: 250px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.qr {
+  margin: 12px auto;
+  width: 160px;
+  height: 160px;
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+/* CONFIRMATION PAGE  */
+#confirmDetails {
+  text-align: left;
+  background: #f1f3f5;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ANIMATION  */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contacts {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 2;
+  /* space between lines */
+  color: #333;
+  /* text color */
+}
+
+.contacts i {
+  color: #c59d5f;
+  /* gold-like color for icons */
+  margin-right: 8px;
+  /* spacing between icon and text */
+  font-size: 18px;
+  /* slightly larger than text */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  nav ul {
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 13px;
+    padding: 5px;
+  }
+
+  .card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  input,
+  select {
+    width: 100%;
+  }
+
+}

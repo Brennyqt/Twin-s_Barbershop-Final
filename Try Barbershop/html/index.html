@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="twin.jpg">
+  <title>Twin's Barber Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+
+ <body>
+    <nav class="navbar">
+  <ul>
+    <ul>
+  <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+  <li><a href="services.html"><i class="fa-solid fa-scissors"></i> Services</a></li>
+  <li><a href="about us.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+  <li><a href="pricing.html"><i class="fa-solid fa-tags"></i> Pricing</a></li>
+  <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+</ul>
+
+    
+    
+  </ul>
+</nav>
+
+  <!-- Login Page -->
+
+  <section id="loginPage" class="page active">
+    <div class="card">
+      <h1>Welcome to Twin's Barber Shop</h1>
+      <input type="email" id="loginEmail" placeholder="Enter Gmail">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account?
+        <a href="signup.html" _blank>Register Here.</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Dashboard Page -->
+  <section id="dashboardPage" class="page hidden">
+    <div class="card">
+      <h2 id="welcomeUser"></h2>
+      <p>Use the navigation bar above to access services and information.</p>
+    </div>
+  </section>
+
+
+  <!-- Pricing Page -->
+  <section id="pricingPage" class="page hidden">
+    <div class="card">
+      <h2>Pricing</h2>
+      <ul style="text-align:left; font-size: 15px; line-height: 1.6;">
+        <li>
+          Haircut: ₱150
+          <button onclick="showPricingSample('Haircut')">See Samples</button>
+        </li>
+        <li>
+          Rebond: ₱1,500
+          <button onclick="showPricingSample('Rebond')">See Samples</button>
+        </li>
+        <li>
+          Massage: ₱300
+          <button onclick="showPricingSample('Massage')">See Samples</button>
+        </li>
+        <li>
+          Tattoo: ₱2,000
+          <button onclick="showPricingSample('Tattoo')">See Samples</button>
+        </li>
+      </ul>
+
+      <!-- Sample images will appear here -->
+      <div id="pricingSample" class="sample-grid"></div>
+
+      <!-- Reserve button appears after seeing samples -->
+      <button id="reserveFromPricing" class="hidden" onclick="reserveFromPricing()"></button>
+
+      <button onclick="goBack('dashboardPage')">Back</button>
+    </div>
+  </section>
+
+
+  <!-- Services Page -->
+  <section id="servicesPage" class="page hidden">
+    <div class="card">
+      <h2>Choose a Service </h2>
+      <button onclick="chooseService('Haircut')">Haircut</button>
+      <button onclick="chooseService('Rebond')">Rebond</button>
+      <button onclick="chooseService('Massage')">Massage</button>
+      <button onclick="chooseService('Tattoo')">Tattoo</button>
+      <button onclick="goBack('dashboardPage')">Back</button>
+    </div>
+  </section>
+
+  <!-- Reservation Page -->
+  <section id="reservationPage" class="page hidden">
+    <div class="card">
+      <h2>Reservation</h2>
+      <p id="chosenService"></p>
+
+      <label>Date: <input type="date" id="resDate"></label><br>
+      <label>Time: <input type="time" id="resTime"></label><br>
+
+      <label>Payment:
+        <select id="paymentMethod" onchange="showPaymentDetails()">
+          <option value="">Select</option>
+          <option value="Cash">Cash</option>
+          <option value="GCash">GCash</option>
+          <option value="Maya">Maya</option>
+        </select>
+      </label>
+
+      <div id="paymentDetails" class="hidden">
+        <p id="paymentNumber"></p>
+        <img id="qrCode" src="" alt="QR Code" class="qr hidden">
+      </div>
+
+      <button onclick="registerReservation()">Confirm Reservation</button>
+      <button onclick="goBack('servicesPage')">Back</button>
+    </div>
+  </section>
+
+  <!-- Confirmation Page -->
+  <section id="confirmationPage" class="page hidden">
+    <div class="card">
+      <h2>Reservation Confirmed!</h2>
+      <pre id="confirmDetails"></pre>
+      <button onclick="restart()">Back to Dashboard</button>
+      <button onclick="logout(event)">Logout</button>
+    </div>
+  </section>
+
+  <!-- About Us Page -->
+  <section id="aboutPage" class="page hidden">
+    <div class="card">
+      <h2>About Us</h2>
+      <p>
+        Twin's Barber Shop has been serving the community since 2022.
+        We provide quality haircuts, grooming, and relaxing services to keep you looking sharp.
+      </p>
+      <div class="contacts">
+        <i class="fa-solid fa-location-dot"></i> Barangay Daniel Fajardo, Las Piñas City <br>
+        <i class="fa-solid fa-clock"></i> Opening Hours: 9:00 AM – 11:00 PM <br>
+        <i class="fa-solid fa-phone"></i> Contact: N/A
+      </div>
+
+      <button onclick="goBack('dashboardPage')">Back</button>
+    </div>
+  </section>
+
+
+ <footer>
+
+ </footer>
+
+</body>
+</html>
