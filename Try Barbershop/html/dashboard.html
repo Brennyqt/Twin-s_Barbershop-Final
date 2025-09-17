@@ -1,66 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard - Twin's Barbershop</title>
-  <link rel="stylesheet" href="/css/dashboard.css"/>
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Twin's Barbershop</title>
+   
+    <link rel="stylesheet" href="/Try Barbershop/css/dashboard.css">
 </head>
 <body>
-  <div class="dashboard">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2>Dashboard</h2>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#appointments">Appointments</a>
-        <a href="login.html" class="logout">Log Out</a>
-      </nav>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="dashboard-content">
-      <section id="services">
-        <h3>Services</h3>
-        <p>We provide premium grooming, hair rebond, massages, and tattoos.</p>
-      </section>
-
-      <section id="about">
-        <h3>About Us</h3>
-        <p>Twin's Barbershop is committed to giving sharp looks and sharp confidence since 2005.</p>
-      </section>
-
-      <section id="pricing">
-        <h3>Pricing</h3>
-        <ul>
-          <li>Haircut - ₱250</li>
-          <li>Rebond - ₱1500</li>
-          <li>Massage - ₱500</li>
-          <li>Tattoo - Starts at ₱2000</li>
+    <nav>
+        <div class="logo">Twin's Barbershop</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="logout.html">Log Out</a></li>
         </ul>
-      </section>
+    </nav>
 
-      <section id="appointments">
-  <h3>Appointments</h3>
-  <table class="appointments-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Service</th>
-        <th>Date & Time</th>
-        <th>Contact</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="appointmentsList">
-      <!-- Filled by JS -->
-    </tbody>
-  </table>
-</section>
+    <main>
+        <div class="welcome">
+            <h1>Welcome to Twin's Barbershop!</h1>
+            <p>Your premium grooming experience starts here.</p>
+            <a href="services.html" class="btn">View Services</a>
+        </div>
     </main>
-  </div>
 </body>
 </html>

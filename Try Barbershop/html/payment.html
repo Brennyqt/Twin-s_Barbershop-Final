@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Twin's Barbershop</title>
+    <link rel="stylesheet" href="/Try Barbershop/css/payment.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Twin's Barbershop</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="logout.html">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Payment</h2>
+        <form id="paymentForm">
+            <label for="method">Payment Method</label>
+            <select id="method" name="method" required onchange="updatePaymentUI()">
+                <option value="">Select Method</option>
+                <option value="Cash">Cash</option>
+                <option value="GCash">GCash</option>
+                <option value="Maya">Maya</option>
+            </select>
+
+            <div id="qr-container" style="display:none; margin-top:1rem; text-align:center;">
+                <img id="qr-image" src="" alt="QR Code" style="width:150px; height:150px; margin-bottom:0.5rem;">
+                <input type="text" id="reference" placeholder="Enter reference number">
+            </div>
+
+
+            <button type="submit">Confirm Payment</button>
+        </form>
+        <a href="reservation.html" class="back-btn">Back</a>
+    </main>
+
+    <script src="/Try Barbershop/js/payment.js"></script>
+</body>
+
+</html>

@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="twin.jpg">
-  <title>Twin's Barber Shop</title>
-  <link rel="stylesheet" href="/css/services.css">
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Twin's Barbershop</title>
 
+    <link rel="stylesheet" href="/Try Barbershop/css/services.css">
 </head>
+<body>
+    <nav>
+        <div class="logo">Twin's Barbershop</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="logout.html">Log Out</a></li>
+        </ul>
+    </nav>
 
- <body>
-    <nav class="navbar">
-  <ul>
-    <ul>
-  <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-  <li><a href="services.html"><i class="fa-solid fa-scissors"></i> Services</a></li>
-  <li><a href="about us.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
-  <li><a href="pricing.html"><i class="fa-solid fa-tags"></i> Pricing</a></li>
-  <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
-</ul>
+    <main>
+        <h2>Our Services</h2>
+        <div class="services-list">
+            <div class="service-card">
+                <h3>Haircut</h3>
+                <p>₱150</p>
+            </div>
+            <div class="service-card">
+                <h3>Rebond</h3>
+                <p>₱2000</p>
+            </div>
+            <div class="service-card">
+                <h3>Massage</h3>
+                <p>₱300</p>
+            </div>
+            <div class="service-card">
+                <h3>Tattoo Small</h3>
+                <p>₱500</p>
+            </div>
+            <div class="service-card">
+                <h3>Tattoo Medium</h3>
+                <p>₱800</p>
+            </div>
+            <div class="service-card">
+                <h3>Tattoo Big</h3>
+                <p>₱1500</p>
+            </div>
+        </div>
+        <a href="dashboard.html" class="back-btn">Back</a>
+    </main>
 
-    
-</nav>
-
-<section id="servicesPage" class="page hidden">
-    <div class="card">
-      <h2>Choose a Service </h2>
-      <button onclick="chooseService('Haircut')">Haircut</button>
-      <button onclick="chooseService('Rebond')">Rebond</button>
-      <button onclick="chooseService('Massage')">Massage</button>
-      <button onclick="chooseService('Tattoo')">Tattoo</button>
-      <button onclick="goBack('dashboardPage')">Back</button>
-    </div>
-  </section>
-    
+    <script src="/Try Barbershop/js/script.js"></script>
 </body>
 </html>

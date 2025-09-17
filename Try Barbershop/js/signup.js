@@ -1,14 +1,23 @@
-document.getElementById("signupForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+const signupForm = document.getElementById('signupForm');
 
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
+signupForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  if (password !== confirmPassword) {
-    alert("Passwords do not match!");
-    return;
-  }
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-  // Redirect to home page after successful registration
-  window.location.href = "index.html";
+    if (!username || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Simple email validation
+    if (!email.includes('@gmail.com')) {
+        alert("Please enter a valid Gmail address.");
+        return;
+    }
+
+    alert("Sign Up successful!");
+    window.location.href = "dashboard.html";
 });

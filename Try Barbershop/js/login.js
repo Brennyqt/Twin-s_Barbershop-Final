@@ -1,14 +1,17 @@
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+const loginForm = document.getElementById('loginForm');
 
-  // You can add validation here if you want
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  if (username && password) {
-    // Redirect to home page after login
-    window.location.href = "index.html";
-  } else {
-    alert("Please fill in both fields.");
-  }
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Simple validation (for demo; replace with real backend auth)
+    if (username === "" || password === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Redirect to dashboard
+    window.location.href = "dashboard.html";
 });

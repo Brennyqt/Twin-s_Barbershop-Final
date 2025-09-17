@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Twin's Barbershop</title>
+    
+    <link rel="stylesheet" href="/Try Barbershop/css/reservation.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Twin's Barbershop</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="logout.html">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Make a Reservation</h2>
+        <form id="reservationForm">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="Haircut">Haircut - ₱150</option>
+                <option value="Rebond">Rebond - ₱2000</option>
+                <option value="Massage">Massage - ₱300</option>
+                <option value="Tattoo Small">Tattoo Small - ₱500</option>
+                <option value="Tattoo Medium">Tattoo Medium - ₱800</option>
+                <option value="Tattoo Big">Tattoo Big - ₱1500</option>
+            </select>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Time</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="submit">Reserve</button>
+            <button type="button" id="cancelBtn">Cancel Reservation</button>
+        </form>
+        <a href="dashboard.html" class="back-btn">Back</a>
+    </main>
+
+    <script src="/Try Barbershop/js/reservation.js"></script>
+</body>
+</html>
