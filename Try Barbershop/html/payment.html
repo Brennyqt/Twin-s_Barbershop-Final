@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Twin's Barbershop</title>
+    <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
     <link rel="stylesheet" href="/Try Barbershop/css/payment.css">
 </head>
 
@@ -33,15 +34,18 @@
             </select>
 
             <div id="qr-container" style="display:none; margin-top:1rem; text-align:center;">
-                <img id="qr-image" src="" alt="QR Code" style="width:150px; height:150px; margin-bottom:0.5rem;">
+                <img id="qr-image" src="qr.jpg">
+                <p> 09625445141</p>
                 <input type="text" id="reference" placeholder="Enter reference number">
             </div>
 
 
             <button type="submit">Confirm Payment</button>
+           <button type="button" onclick="window.location.href='reservation.html'">Back</button>
+
         </form>
-        <a href="reservation.html" class="back-btn">Back</a>
-    </main>
+       
+  </main>
 
     <script src="/Try Barbershop/js/payment.js"></script>
 </body>

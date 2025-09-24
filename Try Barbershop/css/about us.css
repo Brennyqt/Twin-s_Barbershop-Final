@@ -1,39 +1,49 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #1c1c1c;
+     background: linear-gradient(to right,  #1c1c1c, #421204);
     color: #f5f5f5;
 }
 
+h2 {
+    color: #ddb361;
+}
+
+
 nav {
-    background-color: #111;
+    background: linear-gradient(to right, #444140, #6e3c19);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; 
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #f1c40f;
+    color: #ddb361;
 }
 
 nav .nav-links {
     list-style: none;
     display: flex;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav .nav-links li a {
     text-decoration: none;
-    color: #f5f5f5;
+    color: #e2dada;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav .nav-links li a:hover {
     color: #f1c40f;
 }
+
 
 main {
     padding: 2rem;
@@ -49,6 +59,7 @@ main p {
     margin: 1rem auto;
 }
 
+
 .back-btn {
     display: inline-block;
     margin-top: 1.5rem;
@@ -58,8 +69,78 @@ main p {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .back-btn:hover {
     background-color: #d4ac0d;
+}
+
+
+.icons a {
+    color: #cdc414;          
+    text-decoration: none; 
+    font-weight: 500;     
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.icons a:hover {
+    color: #4239e6;       
+}
+
+
+@media (max-width: 1024px) {
+    nav .nav-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    nav .nav-links li {
+        width: 100%;
+    }
+
+    nav .nav-links li a {
+        display: block;
+        padding: 0.7rem;
+        background: #222;
+        border-radius: 5px;
+    }
+
+    main p {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 1.2rem;
+    }
+
+    .back-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .icons a {
+        font-size: 0.9rem;
+    }
 }

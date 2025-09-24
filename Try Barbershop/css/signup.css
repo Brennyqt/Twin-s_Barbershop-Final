@@ -1,21 +1,22 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #1c1c1c;
+    background: linear-gradient(to right, #301f02, #180d05);
     color: #f5f5f5;
 }
 
 nav {
-    background-color: #111;
+    background: linear-gradient(to right, #0b0803, #a38570);
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #f1c40f;
+    color: #ddb361;
 }
 
 main {
@@ -23,14 +24,16 @@ main {
     justify-content: center;
     align-items: center;
     height: 80vh;
+    padding: 1rem;
 }
 
 .signup-card {
-    background-color: #222;
+    background: linear-gradient(to right, #563604, #180d05);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
-    width: 300px;
+    width: 100%;
+    max-width: 350px;
 }
 
 .signup-card h2 {
@@ -56,16 +59,17 @@ main {
     margin-top: 1.5rem;
     width: 100%;
     padding: 0.7rem;
-    background-color: #f1c40f;
+    background-color: #9d998b;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     color: #111;
+    transition: background 0.3s;
 }
 
 .signup-card button:hover {
-    background-color: #d4ac0d;
+    background-color: #c6922b;
 }
 
 .signup-card p {
@@ -81,4 +85,16 @@ main {
 
 .signup-card a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 1.2rem;
+    }
+    .signup-card {
+        padding: 1.5rem;
+    }
+    .signup-card h2 {
+        font-size: 1.2rem;
+    }
 }

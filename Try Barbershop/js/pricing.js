@@ -1,47 +1,53 @@
-function showPricingSample(service) {
-  const sampleDiv = document.getElementById('pricingSample');
+const serviceSamples = {
+  haircut: [
+    { url: '../cl1.1.jpg', label: 'Classic Haircut' },
+    { url: '../cl2.jpg', label: 'Modern Haircut' },
+    { url: '../cl3.jpg', label: 'Layered Haircut' },
+    { url: '../vcut.jpg', label: 'Burst Fade' }
+  ],
+  rebond: [
+    { url: '../reb1.jpg', label: 'Straight Rebond' },
+    { url: '../reb2.jpg', label: 'Smooth Rebond' }
+  ],
+  massage: [
+    { url: '../msg1.jpg', label: 'Relaxing Massage' }
+  ],
+  tattoo: [
+    { url: '../tats1.jpg', label: 'Small Tattoo' },
+    { url: '../tats2.jpg', label: 'Medium Tattoo' },
+    { url: '../tats3.jpg', label: 'Large Tattoo' }
+  ]
+};
+
+
+
+function viewSample(service) {
+  const sampleDiv = document.getElementById(service + "-sample");
   const samples = serviceSamples[service] || [];
 
-  if (samples.length === 0) {
-    sampleDiv.innerHTML = "<p>No samples available.</p>";
+  // toggle
+  if (sampleDiv.classList.contains("active")) {
+    sampleDiv.innerHTML = "";
+    sampleDiv.classList.remove("active");
     return;
   }
 
-function viewSample(service) {
-    // hide all other sample images first
-    document.querySelectorAll('.sample-image').forEach(div => div.style.display = 'none');
+  sampleDiv.innerHTML = "";
 
-    // show selected service sample
-    const sampleDiv = document.getElementById(service + '-sample');
-
-    // set background image for each service
-    let imgUrl = '';
-    switch(service){
-        case 'Haircut': imgUrl = 'cl1.1.jpg'; break;
-        case 'Rebond': imgUrl = 'assets/images/rebond.jpg'; break;
-        case 'Massage': imgUrl = 'assets/images/massage.jpg'; break;
-        case 'Tattoo': imgUrl = 'assets/images/tattoo.jpg'; break;
-    }
-
-    sampleDiv.style.backgroundImage = `url('${imgUrl}')`;
-    sampleDiv.style.display = 'block';
-}
-
-  sampleDiv.innerHTML = samples.map(sample => `
-    <div class="sample-item">
-      <img src="${sample.url}" alt="${sample.label}">
-      <p>${sample.label}</p>
-    </div>
-  `).join("");
-
-  selectedService = service;
-  const reserveBtn = document.getElementById('reserveFromPricing');
-  reserveBtn.classList.remove('hidden');
-  reserveBtn.textContent = `Reserve ${service}`;
-}
-
-function reserveFromPricing() {
-  showPage('servicesPage');
-  chooseService(selectedService);
-  document.getElementById('servicesPage').scrollIntoView({ behavior: 'smooth' });
+  if (samples.length > 0) {
+    samples.forEach(sample => {
+      const img = document.createElement("img");
+      img.src = sample.url;
+      img.alt = sample.label;
+      img.title = sample.label;
+      img.style.width = "120px";
+      img.style.borderRadius = "8px";
+      img.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
+      sampleDiv.appendChild(img);
+    });
+    sampleDiv.classList.add("active");
+  } else {
+    sampleDiv.innerHTML = `<p>No samples available</p>`;
+    sampleDiv.classList.add("active");
+  }
 }

@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing - Twin's Barbershop</title>
-    <link rel="stylesheet" href="/Try Barbershop/css/pricing.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Twin's Barbershop</title>
+  <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
+  <link rel="stylesheet" href="/Try Barbershop/css/pricing.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">Twin's Barbershop</div>
-        <ul class="nav-links">
-            <li><a href="dashboard.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="reservation.html">Reservation</a></li>
-            <li><a href="about us.html">About Us</a></li>
-            <li><a href="logout.html">Log Out</a></li>
-        </ul>
-    </nav>
 
-    <main>
-        <h2>Pricing</h2>
-        <div class="pricing-card">
-    <h3>Haircut</h3>
-    <p>₱150</p>
-    <button onclick="viewSample('Haircut')">See Sample</button>
-    <div class="sample-image" id="Haircut-sample"></div>
-</div>
+  <nav>
+    <div class="logo">Twin's Barbershop</div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="logout.html">Log Out</a></li>
+    </ul>
+  </nav>
 
-            <div class="pricing-card">
-                <h3>Rebond</h3>
-                <p>₱2000</p>
-                <button onclick="viewSample('Rebond')">See Sample</button>
-            </div>
-            <div class="pricing-card">
-                <h3>Massage</h3>
-                <p>₱300</p>
-                <button onclick="viewSample('Massage')">See Sample</button>
-            </div>
-            <div class="pricing-card">
-                <h3>Tattoo</h3>
-                <p>Small: ₱500 | Medium: ₱800 | Big: ₱1500</p>
-                <button onclick="viewSample('Tattoo')">See Sample</button>
-            </div>
-        </div>
-        <a href="dashboard.html" class="back-btn">Back</a>
-    </main>
+  <main>
+    <h2>Pricing</h2>
 
-    <script>
-        function viewSample(service) {
-            alert("Showing sample for: " + service + "\n(Images can be added in assets/images)");
-        }
-    </script>
+    <div class="pricing-card">
+      <h3>Haircut</h3>
+      <p>₱150</p>
+      <div class="sample-row">
+        <button onclick="viewSample('haircut')">See Sample</button>
+        <div id="haircut-sample" class="sample-container"></div>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Rebond</h3>
+      <p>₱2000</p>
+      <div class="sample-row">
+        <button onclick="viewSample('rebond')">See Sample</button>
+        <div id="rebond-sample" class="sample-container"></div>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Massage</h3>
+      <p>₱300</p>
+      <div class="sample-row">
+        <button onclick="viewSample('massage')">See Sample</button>
+        <div id="massage-sample" class="sample-container"></div>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Tattoo</h3>
+      <p>Small: ₱500 | Medium: ₱800 | Big: ₱1500</p>
+      <div class="sample-row">
+        <button onclick="viewSample('tattoo')">See Sample</button>
+        <div id="tattoo-sample" class="sample-container"></div>
+      </div>
+    </div>
+
+    <a href="dashboard.html" class="back-btn">Back</a>
+  </main>
+
+  <script src="/Try Barbershop/js/pricing.js"></script>
 </body>
 </html>

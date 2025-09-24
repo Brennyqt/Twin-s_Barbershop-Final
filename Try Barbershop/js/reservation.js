@@ -1,7 +1,6 @@
 const reservationForm = document.getElementById('reservationForm');
 const cancelBtn = document.getElementById('cancelBtn');
 
-// Pre-select service if coming from services page
 const selectedService = localStorage.getItem('selectedService');
 if (selectedService) {
     document.getElementById('service').value = selectedService;
@@ -19,20 +18,17 @@ reservationForm.addEventListener('submit', function(e) {
     const today = new Date();
     today.setHours(0,0,0,0);
 
-    // Validate past date
     if (selectedDate < today) {
         alert("You cannot select a past date.");
         return;
     }
 
-    // Validate time 9:00 - 23:00
     const [hours, minutes] = timeInput.split(":").map(Number);
     if (hours < 9 || hours > 23 || (hours === 23 && minutes > 0)) {
         alert("Time must be between 9:00 AM and 11:00 PM.");
         return;
     }
 
-    // Save reservation info for confirmation page
     localStorage.setItem('selectedService', service);
     localStorage.setItem('reservationDate', dateInput);
     localStorage.setItem('reservationTime', timeInput);
@@ -41,9 +37,8 @@ reservationForm.addEventListener('submit', function(e) {
     window.location.href = "payment.html";
 });
 
-// Cancel reservation
-cancelBtn.addEventListener('click', function() {
-    if (confirm("Are you sure you want to cancel the reservation?")) {
-        reservationForm.reset();
-    }
+document.getElementById("cancelBtn").addEventListener("click", function () {
+  if (confirm("Are you sure you want to cancel your reservation?")) {
+    window.location.href = "services.html"; 
+  }
 });

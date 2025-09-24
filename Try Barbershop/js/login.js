@@ -12,6 +12,7 @@ loginForm.addEventListener('submit', function(e) {
         return;
     }
 
+
     // Redirect to dashboard
     window.location.href = "dashboard.html";
 });

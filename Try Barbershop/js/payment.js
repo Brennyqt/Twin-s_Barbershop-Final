@@ -9,7 +9,7 @@ function updatePaymentUI() {
         referenceInput.value = '';
     } else if (method === 'GCash') {
         qrContainer.style.display = 'block';
-        qrImage.src = 'assets/images/gcash-qr.jpg';
+        qrImage.src = '../qr.jpg';
     } else if (method === 'Maya') {
         qrContainer.style.display = 'block';
         qrImage.src = 'assets/images/maya-qr.jpg';
@@ -20,6 +20,8 @@ function updatePaymentUI() {
         qrContainer.style.display = 'none';
     }
 }
+
+
 
 // keep existing submit event
 paymentForm.addEventListener('submit', function(e) {
@@ -43,4 +45,8 @@ paymentForm.addEventListener('submit', function(e) {
 
     alert("Payment successful!");
     window.location.href = "confirmation.html";
+
+    
 });
+
+

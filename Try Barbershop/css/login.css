@@ -1,41 +1,49 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #1c1c1c;
-    color: #f5f5f5;
+    background: linear-gradient(to right, #544325, #180d05);
+    color: rgb(242, 234, 234);
 }
 
+
+/* Navbar */    
 nav {
-    background-color: #111;
+    background: linear-gradient(to right, #e1d7d71d, #2e251f);
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
+    justify-content: left; 
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #f1c40f;
+    color: #ddb361;
 }
 
+/* Main container */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    min-height: 80vh;
+    padding: 1rem;
 }
 
+/* Login card */
 .login-card {
-    background-color: #222;
+    background: linear-gradient(to right, #e3c4c41d, #0d0601);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
-    width: 300px;
+    width: 100%;
+    max-width: 350px; /* Limit para di sobrang laki sa desktop */
 }
 
 .login-card h2 {
     text-align: center;
     margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .login-card label {
@@ -46,26 +54,28 @@ main {
 
 .login-card input {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.6rem;
     margin-top: 0.3rem;
     border: none;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 .login-card button {
     margin-top: 1.5rem;
     width: 100%;
-    padding: 0.7rem;
-    background-color: #f1c40f;
+    padding: 0.8rem;
+    background-color: #9d998b;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     color: #111;
+    font-size: 1rem;
 }
 
 .login-card button:hover {
-    background-color: #d4ac0d;
+    background-color: #c6922b;
 }
 
 .login-card p {
@@ -81,4 +91,29 @@ main {
 
 .login-card a:hover {
     text-decoration: underline;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .login-card {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .login-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .login-card input,
+    .login-card button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+
 }

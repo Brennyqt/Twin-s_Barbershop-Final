@@ -12,12 +12,11 @@ signupForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Simple email validation
     if (!email.includes('@gmail.com')) {
         alert("Please enter a valid Gmail address.");
         return;
     }
 
     alert("Sign Up successful!");
-    window.location.href = "dashboard.html";
+    window.location.href = "login.html";
 });
