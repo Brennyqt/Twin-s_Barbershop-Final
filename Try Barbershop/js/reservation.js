@@ -1,3 +1,21 @@
+// 🌟 Fade-in animation for body and form
+window.addEventListener('DOMContentLoaded', () => {
+    document.body.style.opacity = '1';
+    document.body.style.transform = 'translateY(0)';
+
+    const form = document.querySelector('form');
+    if (form) {
+        form.style.opacity = '0';
+        form.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+            form.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            form.style.opacity = '1';
+            form.style.transform = 'translateY(0)';
+        }, 500); // delay for smooth appearance after navbar
+    }
+});
+
+// 🌟 Reservation form logic
 const reservationForm = document.getElementById('reservationForm');
 const cancelBtn = document.getElementById('cancelBtn');
 
@@ -37,7 +55,7 @@ reservationForm.addEventListener('submit', function(e) {
     window.location.href = "payment.html";
 });
 
-document.getElementById("cancelBtn").addEventListener("click", function () {
+cancelBtn.addEventListener("click", function () {
   if (confirm("Are you sure you want to cancel your reservation?")) {
     window.location.href = "services.html"; 
   }

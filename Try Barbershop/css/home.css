@@ -1,0 +1,212 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background: #f5f5f5;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #222;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff9800;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* HERO with 2 background images side by side (desktop) */
+#hero {
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* overlay */
+    url('../twin.jpg') left center no-repeat,
+    url('../jake.jpg') right center no-repeat;
+  background-size: cover, 50% auto, 50% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  animation: fadeInDown 1.5s;
+}
+
+.hero-content p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  animation: fadeInUp 1.5s;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e67e22;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CONTENT */
+.content {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #fff;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.grid-item {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+.grid-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.socials a {
+  color: #ff9800;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+/* SCROLL TO TOP */
+#scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#scrollTop:hover {
+  background: #e67e22;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /* NAVIGATION */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* HERO stacked background images */
+  #hero {
+    background: 
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('../twin.jpg') top center no-repeat,
+      url('../jake.jpg') bottom center no-repeat;
+    background-size: cover, 100% 50%, 100% 50%;
+    background-position: center, top, bottom;
+  }
+}

@@ -1,30 +1,65 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #1c1c1c;
-    color: #f5f5f5;
+    background: black;
+    color: rgb(212, 209, 209);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 img {
     width:150px;
     height:150px; 
     margin-bottom:0.5rem;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: imgFadeIn 0.8s ease forwards 0.6s;
 }
 
-/* Navbar */
+@keyframes imgFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 nav {
     background: linear-gradient(to right, #444140, #6e3c19);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* para bumaba ang links kapag maliit ang screen */
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: navDrop 0.8s ease forwards 0.3s;
+}
+
+@keyframes navDrop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #ddb361;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav .logo:hover {
+    transform: scale(1.1);
+    color: #f5d98b;
 }
 
 nav .nav-links {
@@ -40,33 +75,57 @@ nav .nav-links li a {
     text-decoration: none;
     color: #f5f5f5;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav .nav-links li a:hover {
     color: #f1c40f;
 }
 
-/* Main content */
 main {
     padding: 2rem;
     text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: mainFadeIn 0.9s ease forwards 0.6s;
 }
 
-/* Form card */
+@keyframes mainFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 form {
     background-color: #222;
     padding: 2rem;
     width: 100%;
-    max-width: 350px; /* limit sa desktop, full sa mobile */
+    max-width: 350px;
     border-radius: 10px;
     display: inline-block;
     box-shadow: 0 0 10px #000;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: formFadeIn 0.9s ease forwards 0.8s;
+}
+
+@keyframes formFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 form label {
     display: block;
     margin-top: 1rem;
     font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+form label:hover {
+    color: #f1c40f;
 }
 
 form input, form select {
@@ -76,6 +135,13 @@ form input, form select {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    outline: none;
+    box-shadow: 0 0 8px #c6922b;
+    transform: scale(1.02);
 }
 
 form button {
@@ -89,13 +155,15 @@ form button {
     font-weight: bold;
     color: #111;
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 form button:hover {
     background-color: #d4ac0d;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Back button */
 .back-btn {
     display: inline-block;
     margin-top: 1.5rem;
@@ -106,13 +174,15 @@ form button:hover {
     border-radius: 5px;
     font-weight: bold;
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .back-btn:hover {
     background-color: #d4ac0d;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* 📱 Responsive adjustments */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -130,7 +200,7 @@ form button:hover {
     }
 
     .back-btn {
-        width: 100%; /* gawing full width sa mobile */
+        width: 100%;
     }
 }
 
