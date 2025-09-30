@@ -42,8 +42,8 @@ reservationForm.addEventListener('submit', function(e) {
     }
 
     const [hours, minutes] = timeInput.split(":").map(Number);
-    if (hours < 9 || hours > 23 || (hours === 23 && minutes > 0)) {
-        alert("Time must be between 9:00 AM and 11:00 PM.");
+    if (hours < 8 || hours > 20 || (hours === 20 && minutes > 0)) {
+        alert("Time must be between 8:00 AM and 8:00 PM.");
         return;
     }
 

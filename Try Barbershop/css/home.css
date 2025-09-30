@@ -5,208 +5,209 @@
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background: #f5f5f5;
-  color: #333;
-  scroll-behavior: smooth;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #3a3a3a;
+  color: #f4f3f3;
 }
 
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #222;
-  color: #fff;
-  position: sticky;
+/* Navbar */
+nav {
+  position: fixed;
   top: 0;
+  width: 100%;
+  background: #000;
+  padding: 15px 0;
   z-index: 1000;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
+nav ul {
   display: flex;
+  justify-content: center;
+  gap: 30px;
   list-style: none;
 }
 
-.nav-links li {
-  margin-left: 2rem;
-}
-
-.nav-links a {
+nav ul li a {
   color: #fff;
   text-decoration: none;
+  font-weight: bold;
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #ff9800;
+nav ul li a:hover {
+  color: #f5a623;
 }
 
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px 40px;
 }
 
-/* HERO with 2 background images side by side (desktop) */
-#hero {
-  height: 100vh;
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* overlay */
-    url('../twin.jpg') left center no-repeat,
-    url('../jake.jpg') right center no-repeat;
-  background-size: cover, 50% auto, 50% auto;
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Left Coffee Cup */
+.hero-left {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.coffee-cup {
+  width: 200%;
+  max-width: 500px;
+  height: auto;
+  animation: floatCup 4s ease-in-out infinite;
+}
+
+@keyframes floatCup {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Center Text */
+.hero-text {
+  flex: 1;
   text-align: center;
-  color: #fff;
-  position: relative;
+  min-width: 320px;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
-  animation: fadeInDown 1.5s;
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.hero-content p {
-  margin: 1rem 0;
-  font-size: 1.2rem;
-  animation: fadeInUp 1.5s;
+.hero-text p {
+  font-size: 22px;
+  margin-bottom: 25px;
+  font-family: "Permanent Marker", cursive;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #ff9800;
-  color: white;
-  text-decoration: none;
+  padding: 12px 25px;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
   border-radius: 25px;
-  transition: background 0.3s;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
 }
 
 .btn:hover {
-  background: #e67e22;
+  background: #f5a623;
+  color: #000;
 }
 
-/* ANIMATIONS */
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Right Promo Slider */
+.hero-right {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* CONTENT */
-.content {
-  padding: 4rem 2rem;
-  text-align: center;
+.promo-slider {
+  position: relative;
+  width: 320px;
+  height: 500px;
+  border: 3px solid #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   background: #fff;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 4rem 2rem;
-}
-
-.grid-item {
-  background: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.grid-item:hover {
-  transform: scale(1.05);
-}
-
-.grid-item img {
+.promo-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
+  transform: translateX(100%);
+  will-change: transform;
 }
 
-/* FOOTER */
-footer {
-  background: #222;
-  color: #fff;
+.promo-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+#promo-indicators {
   text-align: center;
-  padding: 2rem;
+  margin-top: 15px;
 }
 
-.socials a {
-  color: #ff9800;
-  margin: 0 1rem;
-  text-decoration: none;
-}
-
-/* SCROLL TO TOP */
-#scrollTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #ff9800;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  font-size: 1.5rem;
+#promo-indicators span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #bbb;
   border-radius: 50%;
-  display: none;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-#scrollTop:hover {
-  background: #e67e22;
+#promo-indicators span.active {
+  background: #000;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  /* NAVIGATION */
-  .nav-links {
-    display: none;
+/* Fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-container {
     flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 200px;
+    text-align: center;
+    gap: 30px;
   }
 
-  .nav-links.active {
-    display: flex;
-  }
+  .hero-text h1 { font-size: 42px; }
+  .hero-text p { font-size: 18px; }
+  .promo-slider { width: 280px; height: 420px; }
+}
 
-  .nav-links li {
-    margin: 1rem 0;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  /* HERO stacked background images */
-  #hero {
-    background: 
-      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-      url('../twin.jpg') top center no-repeat,
-      url('../jake.jpg') bottom center no-repeat;
-    background-size: cover, 100% 50%, 100% 50%;
-    background-position: center, top, bottom;
-  }
+@media (max-width: 600px) {
+  .hero-text h1 { font-size: 32px; }
+  .hero-text p { font-size: 16px; }
+  .promo-slider { width: 240px; height: 360px; }
 }

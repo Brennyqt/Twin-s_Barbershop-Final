@@ -10,9 +10,6 @@ function updatePaymentUI() {
     } else if (method === 'GCash') {
         qrContainer.style.display = 'block';
         qrImage.src = '../qr.jpg';
-    } else if (method === 'Maya') {
-        qrContainer.style.display = 'block';
-        qrImage.src = 'assets/images/maya-qr.jpg';
     } else if (method === 'QR') {
         qrContainer.style.display = 'block';
         qrImage.src = 'assets/images/qr-default.jpg';
@@ -35,7 +32,7 @@ paymentForm.addEventListener('submit', function(e) {
         return;
     }
 
-    if ((method === "GCash" || method === "Maya" || method === "QR") && reference === "") {
+    if ((method === "GCash" || method === "QR") && reference === "") {
         alert("Please enter reference number for selected payment method.");
         return;
     }
