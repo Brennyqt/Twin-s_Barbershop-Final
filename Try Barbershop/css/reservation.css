@@ -1,61 +1,113 @@
+/* 🌟 Page load animation */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right,  #1c1c1c, #4e342c);
-    color: #f5f5f5;
+    background: white;
+    color: #111;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1s ease-out forwards;
 }
 
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔹 Navbar */
 nav {
-    background: linear-gradient(to right, #444140, #6e3c19);
+    background-color: #120901;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: navDrop 0.8s ease forwards 0.3s;
+}
+
+@keyframes navDrop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ddb361;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
+nav .logo:hover {
+    transform: scale(1.1);
+    color: #f5d98b;
+}
+
+/* Nav links horizontal, no bullets */
 nav .nav-links {
-    list-style: none;
     display: flex;
-    gap: 2rem;
+    list-style: none;
     margin: 0;
     padding: 0;
+    gap: 2rem;
+}
+
+nav .nav-links li {
+    display: inline-block;
 }
 
 nav .nav-links li a {
     text-decoration: none;
     color: #f5f5f5;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav .nav-links li a:hover {
     color: #f1c40f;
+    transform: translateY(-3px);
 }
 
+/* 🔹 Main content */
 main {
     padding: 2rem;
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.6s;
 }
 
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* 🔹 Form styling */
 form {
-    background-color: #222;
+    background: rgb(12, 0, 0);
+    color: #fafafa;
     padding: 2rem;
     border-radius: 10px;
     display: inline-block;
     box-shadow: 0 0 10px #000;
     width: 300px;
     max-width: 100%;
+
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeSlideIn 0.8s ease forwards 0.8s;
 }
 
 form label {
     display: block;
+    color: white;
     margin-top: 1rem;
     font-size: 0.9rem;
 }
@@ -79,13 +131,15 @@ form button {
     cursor: pointer;
     font-weight: bold;
     color: #111;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s ease;
 }
 
 form button:hover {
     background-color: #d4ac0d;
+    transform: scale(1.05);
 }
 
+/* 🔹 Back Button */
 .back-btn {
     display: inline-block;
     margin-top: 1rem;
@@ -95,13 +149,15 @@ form button:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s ease;
 }
 
 .back-btn:hover {
     background-color: #d4ac0d;
+    transform: scale(1.05);
 }
 
+/* 📱 Responsive */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;

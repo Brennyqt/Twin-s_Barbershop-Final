@@ -1,24 +1,69 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #544325, #180d05);
-    color: rgb(242, 234, 234);
+    background: white;
+    color: #111;
+
+    /* 🌟 Page load animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1s ease-out forwards;
 }
 
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Navbar */    
 nav {
-    background: linear-gradient(to right, #e1d7d71d, #2e251f);
-    padding: 1rem 2rem;
+    background-color: #120901;
+    padding: 10px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: left; 
+    flex-wrap: wrap;
+
+    /* Animate on load */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: navDrop 0.8s ease forwards 0.3s;
+}
+
+@keyframes navDrop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav .nav-links li a {
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links a:hover {
+  color: #f4b400;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ddb361;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav .logo:hover {
+    transform: scale(1.1);
+    color: #f5d98b;
 }
 
 /* Main container */
@@ -32,24 +77,53 @@ main {
 
 /* Login card */
 .login-card {
-    background: linear-gradient(to right, #e3c4c41d, #0d0601);
+     background: rgb(12, 0, 0);
+  color: #fafafa;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
     width: 100%;
-    max-width: 350px; /* Limit para di sobrang laki sa desktop */
+    max-width: 350px;
+
+    /* Animation */
+    opacity: 0;
+    transform: scale(0.95);
+    animation: cardFadeIn 0.9s ease forwards 0.6s;
+}
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .login-card h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: textFade 0.7s ease forwards 0.8s;
+}
+
+@keyframes textFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .login-card label {
     display: block;
     margin-top: 1rem;
     font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.login-card label:hover {
+    color: #f1c40f;
 }
 
 .login-card input {
@@ -59,38 +133,53 @@ main {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-card input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #c6922b;
+    transform: scale(1.02);
 }
 
 .login-card button {
     margin-top: 1.5rem;
     width: 100%;
     padding: 0.8rem;
-    background-color: #9d998b;
+    background-color: #f1c40f;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     color: #111;
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .login-card button:hover {
     background-color: #c6922b;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .login-card p {
     text-align: center;
     margin-top: 1rem;
     font-size: 0.85rem;
+    transition: color 0.3s ease;
 }
 
 .login-card a {
     color: #f1c40f;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .login-card a:hover {
     text-decoration: underline;
+    color: #ffdd4d;
+    transform: translateY(-2px);
 }
 
 /* 📱 Responsive adjustments */
@@ -114,6 +203,76 @@ main {
         font-size: 0.9rem;
         padding: 0.6rem;
     }
-
-
 }
+
+/* 🔄 Spinner Overlay for Login */
+#spinnerOverlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(20, 10, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+#spinnerOverlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay-card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    color: #f5f5f5;
+    animation: fadeInUp 0.5s ease forwards;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.overlay-card h2 {
+    color: #f1c40f;
+    text-shadow: 0 0 10px #f1c40f;
+    margin-bottom: 0.5rem;
+    animation: pulseGlow 5s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 5px #ddb361; }
+    50% { text-shadow: 0 0 15px #f1c40f; }
+    100% { text-shadow: 0 0 5px #ddb361; }
+}
+
+.overlay-card p {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid #f1c40f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+

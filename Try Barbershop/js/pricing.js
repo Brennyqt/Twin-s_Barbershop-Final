@@ -50,4 +50,5 @@ function viewSample(service) {
     sampleDiv.innerHTML = `<p>No samples available</p>`;
     sampleDiv.classList.add("active");
   }
+  
 }

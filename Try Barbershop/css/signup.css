@@ -1,22 +1,52 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #301f02, #180d05);
-    color: #f5f5f5;
+    background: white;
+    color: #111;
+
+    /* Page load animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 nav {
-    background: linear-gradient(to right, #0b0803, #a38570);
+    background: rgb(14, 2, 2);
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
+    /* Animate navbar drop */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: navDrop 0.8s ease forwards 0.3s;
+}
+
+@keyframes navDrop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ddb361;
+    color: #fdfdfb;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav .logo:hover {
+    transform: scale(1.1);
+    color: #f5d98b;
 }
 
 main {
@@ -28,23 +58,54 @@ main {
 }
 
 .signup-card {
-    background: linear-gradient(to right, #563604, #180d05);
+    background: rgb(14, 2, 2);
+    color: white;
     padding: 2rem;
+    margin-top: 65px;
+    margin-bottom: 52px;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
     width: 100%;
     max-width: 350px;
+
+    /* Entrance animation */
+    opacity: 0;
+    transform: scale(0.95);
+    animation: cardFadeIn 0.9s ease forwards 0.6s;
+}
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .signup-card h2 {
     text-align: center;
     margin-bottom: 1.5rem;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: textFade 0.7s ease forwards 0.9s;
+}
+
+@keyframes textFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .signup-card label {
     display: block;
     margin-top: 1rem;
     font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.signup-card label:hover {
+    color: #f1c40f;
 }
 
 .signup-card input {
@@ -53,6 +114,13 @@ main {
     margin-top: 0.3rem;
     border: none;
     border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.signup-card input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #c6922b;
+    transform: scale(1.02);
 }
 
 .signup-card button {
@@ -65,26 +133,33 @@ main {
     cursor: pointer;
     font-weight: bold;
     color: #111;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .signup-card button:hover {
     background-color: #c6922b;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .signup-card p {
     text-align: center;
     margin-top: 1rem;
     font-size: 0.85rem;
+    transition: color 0.3s ease;
 }
 
 .signup-card a {
     color: #f1c40f;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .signup-card a:hover {
     text-decoration: underline;
+    color: #ffdd4d;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 480px) {

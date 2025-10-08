@@ -4,4 +4,5 @@ document.querySelectorAll('.service-card').forEach(card => {
         localStorage.setItem('selectedService', serviceName);
         window.location.href = "reservation.html";
     });
+    
 });

@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Twin's Barbershop</title>
+    <title>Login</title>
     <link rel="icon" href="/Try Barbershop/twin.jpg">
     <link rel="stylesheet" href="/Try Barbershop/css/login.css">
     <link rel="icon" href="/Try Barbershop/images/twin.jpg" type="image/jpg">
 </head>
 <body>
-    <nav id="navbar">
-        <div class="logo">Twin's Barbershop</div>
+ <nav>
+        <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Back to Home Page</a></li>
+        </ul>
     </nav>
 
     <main>
         <div class="login-card">
             <h2>Login</h2>
             <form id="loginForm">
-                <label for="username">Username or Gmail</label>
-                <input type="text" id="username" name="username" required>
+                <label for="name">Gmail</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your Gmail">
                 
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required placeholder="Enter your Password">
                 
                 <button type="submit">Login</button>
             </form>
-             <div id="spinner" class="spinner" style="display: none;"></div>
 
             <p>Don't have an account? <a href="signup.html">Sign up</a></p>
             <p><a href="forgot pass.html">Forgot your password?</a></p>
         </div>
     </main>
+
+    <!-- Spinner Overlay -->
+    <div id="spinnerOverlay">
+        <div class="overlay-card">
+            <h2>Logging in...</h2>
+            <div class="spinner"></div>
+        </div>
+    </div>
    
     <script src="/Try Barbershop/js/login.js"></script>
 </body>

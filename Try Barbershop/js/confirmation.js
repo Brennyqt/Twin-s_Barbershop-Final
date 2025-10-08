@@ -1,6 +1,8 @@
-// Display reservation and payment info
-document.getElementById('service').innerText = localStorage.getItem('selectedService') || 'N/A';
-document.getElementById('date').innerText = localStorage.getItem('reservationDate') || 'N/A';
-document.getElementById('time').innerText = localStorage.getItem('reservationTime') || 'N/A';
-document.getElementById('paymentMethod').innerText = localStorage.getItem('paymentMethod') || 'N/A';
-document.getElementById('referenceNumber').innerText = localStorage.getItem('paymentReference') || 'N/A';
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById('service').textContent = localStorage.getItem('service') || 'N/A';
+  document.getElementById('date').textContent = localStorage.getItem('date') || 'N/A';
+  document.getElementById('time').textContent = localStorage.getItem('time') || 'N/A';
+  document.getElementById('paymentMethod').textContent = localStorage.getItem('paymentMethod') || 'N/A';
+  document.getElementById('referenceNumber').textContent = localStorage.getItem('paymentReference') || 'N/A';
+  document.getElementById('downpayment').textContent = localStorage.getItem('downpayment') || '0';
+});
