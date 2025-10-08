@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment - Twin's Barbershop</title>
-    <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
-    <link rel="stylesheet" href="/Try Barbershop/css/payment.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment - Twin's Barbershop</title>
+  <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
+  <link rel="stylesheet" href="/Try Barbershop/css/payment.css">
 </head>
 
 <body>
-    <nav>
-        <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
-        <ul class="nav-links">
-            <li><a href="dashboard.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="reservation.html">Reservation</a></li>
-            <li><a href="about us.html">About Us</a></li>
-            <li><a href="logout.html">Log Out</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      
+      <li><a href="history.html">History</a></li>
+      <li><a href="logout.html">Log Out</a></li>
+    </ul>
+  </nav>
 
-    <main>
-        <h2>Payment</h2>
-        <form id="paymentForm">
-            <label for="method">Payment Method</label>
-            <select id="method" name="method" required onchange="updatePaymentUI()">
-                <option value="">Select Method</option>
-                <option value="Cash">Cash</option>
-                <option value="GCash">GCash</option>
-            </select>
-
-            <div id="qr-container" style="display:none; margin-top:1rem; text-align:center;">
-                <img id="qr-image" src="qr.jpg">
-                <p>09305432561</p>
-                <input type="text" id="reference" placeholder="Enter reference number">
-            </div>
+  <main>
+    <h2>Payment</h2>
+    <form id="paymentForm">
+      <label for="method">Payment Method</label>
+      <select id="method" name="method" required onchange="updatePaymentUI()">
+        
+        <option value="">Select Method</option>
+        <option value="Cash">Cash</option>
+        <option value="GCash">GCash</option>
+      </select>
 
 
-            <button type="submit">Confirm Payment</button>
-           <button type="button" onclick="window.location.href='reservation.html'">Back</button>
+      <div id="qr-container" style="display:none; margin-top:1rem; text-align:center;">
+        <img id="qr-image" src="qr.jpg" alt="GCash QR">
+        <p>09305432561</p>
+        <input type="text" id="reference" placeholder="Enter reference number">
+      </div>
 
-        </form>
-  
+      <label for="downpayment">Downpayment (₱)</label>
+      <input type="number" id="downpayment" min="0" placeholder="Enter amount" required>
+
+      <button type="submit">Confirm Payment</button>
+      <button type="button" onclick="window.location.href='reservation.html'">Back</button>
+    </form>
+
+    
   </main>
 
-    <script src="/Try Barbershop/js/payment.js"></script>
+  <script src="/Try Barbershop/js/payment.js"></script>
 </body>
-
 </html>

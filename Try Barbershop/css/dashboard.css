@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #3a3a3a;
-    color: rgb(212, 209, 209);
+    background: white;
+    color: #111;
 
     /* 🌟 Page load animation */
     opacity: 0;
@@ -42,7 +42,7 @@ nav {
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ddb361;
+    color: white;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 

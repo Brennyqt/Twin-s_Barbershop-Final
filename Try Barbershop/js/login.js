@@ -11,11 +11,18 @@ window.addEventListener('load', () => {
 loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('name').value.trim();
     const password = document.getElementById('password').value.trim();
 
-    if (username === "" || password === "") {
+    // Check if any field is empty
+    if (email === "" || password === "") {
         alert("Please fill in all fields.");
+        return;
+    }
+
+    // Check if it's a Gmail address (email must contain @gmail.com)
+    if (!email.includes('@gmail.com')) {
+        alert("Please enter a valid Gmail address.");
         return;
     }
 
@@ -25,6 +32,6 @@ loginForm.addEventListener('submit', function(e) {
     // Simulate loading before redirect
     setTimeout(() => {
         spinnerOverlay.classList.remove('active');
-        window.location.href = "dashboard.html";
+        window.location.href = "dashboard.html";  // Redirect after successful login
     }, 2500);
 });
