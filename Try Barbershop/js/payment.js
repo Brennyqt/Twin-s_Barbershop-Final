@@ -7,12 +7,12 @@ function updatePaymentUI() {
   // Always show QR and reference input for both methods
   if (method === 'Cash') {
     qrContainer.style.display = 'block';
-    qrImage.src = 'qr-cash.jpg'; // 🔹 you can change filename if needed
+    qrImage.src = 'qr1.jpg'; // 
     referenceInput.placeholder = 'Enter Reference Number';
   } 
   else if (method === 'GCash') {
     qrContainer.style.display = 'block';
-    qrImage.src = 'qr-gcash.jpg'; // 🔹 you can change filename if needed
+    qrImage.src = 'qr1.jpg'; // 
     referenceInput.placeholder = 'Enter GCash Reference Number';
   } 
   else {
@@ -50,7 +50,7 @@ paymentForm.addEventListener('submit', function(e) {
     return;
   }
 
-  // ✅ Save payment + reservation info
+  // Save payment + reservation info
   localStorage.setItem('paymentMethod', method);
   localStorage.setItem('paymentReference', reference);
   localStorage.setItem('downpayment', downpayment);

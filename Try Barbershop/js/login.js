@@ -20,7 +20,7 @@ loginForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Check if it's a Gmail address (email must contain @gmail.com)
+    // Check if it's a Gmail address (dapat correct ang @gmail.com)
     if (!email.includes('@gmail.com')) {
         alert("Please enter a valid Gmail address.");
         return;
@@ -32,6 +32,6 @@ loginForm.addEventListener('submit', function(e) {
     // Simulate loading before redirect
     setTimeout(() => {
         spinnerOverlay.classList.remove('active');
-        window.location.href = "dashboard.html";  // Redirect after successful login
+        window.location.href = "dashboard.html";  
     }, 2500);
 });

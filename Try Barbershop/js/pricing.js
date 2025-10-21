@@ -1,3 +1,5 @@
+// DI NA TO KASAMA SA WEBSITE PERO ANDITO SYA SA LOOB NG FILE
+
 const serviceSamples = {
   haircut: [
     { url: '../cl1.1.jpg', label: 'Classic Haircut' },

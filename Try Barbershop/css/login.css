@@ -4,7 +4,7 @@ body {
     background: white;
     color: #111;
 
-    /* 🌟 Page load animation */
+    /*  Page load animation */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeSlideIn 1s ease-out forwards;
@@ -182,7 +182,7 @@ main {
     transform: translateY(-2px);
 }
 
-/* 📱 Responsive adjustments */
+/* responsive */
 @media (max-width: 480px) {
     nav .logo {
         font-size: 1.2rem;
@@ -205,7 +205,7 @@ main {
     }
 }
 
-/* 🔄 Spinner Overlay for Login */
+/* Spinner Overlay for Login */
 #spinnerOverlay {
     position: fixed;
     top: 0; left: 0;
