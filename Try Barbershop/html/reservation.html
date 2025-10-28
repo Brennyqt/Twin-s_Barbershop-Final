@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
     <link rel="stylesheet" href="/Try Barbershop/css/reservation.css">
 </head>
+
 <body>
     <nav>
         <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
@@ -14,38 +16,61 @@
             <li><a href="dashboard.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="history.html">History</a></li>
-          
-        
+
+
             <li><a href="logout.html">Log Out</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Make a Reservation</h2>
-        <form id="reservationForm">
-            <label for="service">Service</label>
-            <select id="service" name="service" required>
-                <option value="">Select a service</option>
-                <option value="Haircut">Haircut - ₱130</option>
-                <option value="Rebond">Rebond - ₱1,300</option>
-          
-                <option value="Small Tattoo">Small Tattoo - ₱2,000</option>
 
-                <option value="Big Tattoo">Big Tattoo - ₱5,000</option>
-            </select>
+        <div class="form-container">
+            <form id="reservationForm">
 
-            <label for="date">Date</label>
-            <input type="date" id="date" name="date" required>
+                <div class="form-title">
+                    <h2>Make a Reservation</h2>
+                </div>
 
-            <label for="time">Time</label>
-            <input type="time" id="time" name="time" required>
+                <div class="input-section">
+                       <label for="service">Service</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="Haircut">Haircut - ₱130</option>
+                    <option value="Rebond">Rebond - ₱1,300</option>
 
-            <button type="submit">Reserve</button>
-            <button type="button" id="cancelBtn">Cancel Reservation</button>
-        </form>
-        
+                    <option value="Tattoo Small">Small Tattoo - ₱2,000</option>
+
+                    <option value="Tattoo Big">Big Tattoo - 5,000</option>
+                </select>
+
+
+                <div id="tattooQuantitySection" style="display:none;">
+                    <label for="tattooQuantity">Quantity of Tattoos</label>
+                    <input type="number" id="tattooQuantity" name="tattooQuantity" min="1" placeholder="Enter quantity">
+                </div>
+
+
+
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required>
+
+                </div>
+             
+
+                <button type="submit">Reserve</button>
+                <button type="button" id="cancelBtn">Cancel Reservation</button>
+            </form>
+        </div>
+
+
+
     </main>
 
     <script src="/Try Barbershop/js/reservation.js"></script>
 </body>
+
 </html>

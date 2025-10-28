@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f3f2f2;
-    color: #f5f5f5;
+    color: black;
 
     /* Page load animation */
     opacity: 0;
@@ -90,7 +90,7 @@ main {
 
 /*  Confirmation Details Card */
 .confirmation-details {
-    background-color: #0c0c0c;
+    background-color: white;
     padding: 2rem;
     border-radius: 10px;
     display: inline-block;

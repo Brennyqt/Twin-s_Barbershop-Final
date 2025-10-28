@@ -16,6 +16,11 @@ body {
     }
 }
 
+h2 {
+    color: black;
+    
+}
+
 /* Navbar */
 nav {
     background-color: #120901;
@@ -88,27 +93,82 @@ main {
     }
 }
 
+
 /* Form styling */
+
+.form-title{
+    margin-bottom: 15%;
+}
+
 form {
-    background: rgb(12, 0, 0);
-    color: #fafafa;
+    background:white;
+    color: white;
     padding: 2rem;
     border-radius: 10px;
     display: inline-block;
     box-shadow: 0 0 10px #000;
     width: 300px;
     max-width: 100%;
-
     opacity: 0;
     transform: translateY(10px);
     animation: fadeSlideIn 0.8s ease forwards 0.8s;
+    
 }
+
+/* Unified input & select styling */
+form select,
+form input[type="date"],
+form input[type="time"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #111;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Fix alignment for date/time picker icons */
+form input[type="date"]::-webkit-calendar-picker-indicator,
+form input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 0.2rem;
+    margin: 0;
+}
+
+/* Optional: Add custom dropdown arrow for Service for consistent look */
+form select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M2 4l4 4 4-4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 12px;
+}
+
+/* Focus effect */
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #f1c40f;
+    box-shadow: 0 0 5px rgba(241, 196, 15, 0.5);
+}
+
+
 
 form label {
     display: block;
-    color: white;
+    color: black;
     margin-top: 1rem;
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 form input,
@@ -116,16 +176,15 @@ form select {
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.3rem;
-    border: none;
-    border-radius: 5px;
 }
+
 
 form button {
     margin-top: 1.5rem;
     width: 100%;
     padding: 0.7rem;
-    background-color: #c6922b;
-    border: none;
+    background-color: #f1c40f;
+   
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -134,8 +193,9 @@ form button {
 }
 
 form button:hover {
-    background-color: #d4ac0d;
+    background-color: black;
     transform: scale(1.05);
+    color: white;
 }
 
 /* Back Button */
