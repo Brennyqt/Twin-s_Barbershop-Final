@@ -124,7 +124,7 @@ main {
     transition: color 0.3s;
 }
 
-/* 🔹 Headings */
+/* Headings */
 h2 {
     color: black;
     opacity: 0;
@@ -157,11 +157,12 @@ h2 {
 }
 
 .back-btn:hover {
-    background-color: #d4ac0d;
+    background-color: black;
+    color: white;
     transform: scale(1.05);
 }
 
-/* 🔸 Responsive Design */
+/* Responsive Design */
 @media (max-width: 1024px) {
     nav .nav-links {
         gap: 1rem;

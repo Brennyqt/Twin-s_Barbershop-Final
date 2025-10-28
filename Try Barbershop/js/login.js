@@ -22,7 +22,7 @@ loginForm.addEventListener('submit', function(e) {
 
     // Check if it's a Gmail address (dapat correct ang @gmail.com)
     if (!email.includes('@gmail.com')) {
-        alert("Please enter a valid Gmail address.");
+        alert("Please enter a valid Email address.");
         return;
     }
 
