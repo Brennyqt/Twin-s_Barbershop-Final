@@ -17,6 +17,7 @@ body {
     }
 }
 
+
 /* Navbar */
 nav {
     background-color: #120901;
@@ -138,7 +139,7 @@ main .welcome .btn:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* 🔹 Responsive Design */
+/*  Responsive Design */
 @media (max-width: 1024px) {
     nav .nav-links {
         gap: 1rem;

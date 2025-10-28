@@ -1,3 +1,5 @@
+// DI NA TO KASAMA SA WEBSITE PERO ANDITO SYA SA LOOB NG FILE
+
 const slides = document.querySelectorAll(".promo-slide");
 const indicators = document.querySelectorAll("#promo-indicators span");
 

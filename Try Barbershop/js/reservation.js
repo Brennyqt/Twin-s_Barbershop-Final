@@ -1,80 +1,73 @@
-// 🌟 Fade-in animation for body and form
-window.addEventListener('DOMContentLoaded', () => {
-    document.body.style.opacity = '1';
-    document.body.style.transform = 'translateY(0)';
-
-    const form = document.querySelector('form');
-    if (form) {
-        form.style.opacity = '0';
-        form.style.transform = 'translateY(10px)';
-        setTimeout(() => {
-            form.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            form.style.opacity = '1';
-            form.style.transform = 'translateY(0)';
-        }, 500);
-    }
-});
-
-// 🌟 Reservation form logic
 const reservationForm = document.getElementById('reservationForm');
 const cancelBtn = document.getElementById('cancelBtn');
 
+// Retrieve selected service from local storage
 const selectedService = localStorage.getItem('selectedService');
 if (selectedService) {
     document.getElementById('service').value = selectedService;
     localStorage.removeItem('selectedService');
 }
 
-reservationForm.addEventListener('submit', function (e) {
+// tattoo quantity logic 
+const serviceSelect = document.getElementById('service');
+const tattooQuantitySection = document.getElementById('tattooQuantitySection');
+const tattooQuantityInput = document.getElementById('tattooQuantity');
+
+serviceSelect.addEventListener('change', function() {
+    const selectedService = serviceSelect.value;
+
+    //  tattoo options
+    if (selectedService === 'Tattoo Small' || selectedService === 'Tattoo Big') {
+        tattooQuantitySection.style.display = 'block';
+        tattooQuantityInput.required = true;
+    } else {
+        tattooQuantitySection.style.display = 'none';
+        tattooQuantityInput.required = false;
+        tattooQuantityInput.value = '';
+    }
+});
+
+// Reservation form submission 
+reservationForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const dateInput = document.getElementById('date').value;
     const timeInput = document.getElementById('time').value;
-    const service = document.getElementById('service').value;
-
-    if (!dateInput || !timeInput || !service) {
-        alert("Please complete all fields.");
-        return;
-    }
+    const service = serviceSelect.value;
 
     const selectedDate = new Date(dateInput);
     const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    today.setHours(0,0,0,0);
 
-    // ❌ Bawal pumili ng nakaraang date
     if (selectedDate < today) {
         alert("You cannot select a past date.");
         return;
     }
 
     const [hours, minutes] = timeInput.split(":").map(Number);
-    if (hours < 8 || hours > 20 || (hours === 20 && minutes > 0)) {
-        alert("We're open from 8:00 AM to 8:00 PM only.");
+    if (hours < 9 || hours > 23 || (hours === 23 && minutes > 0)) {
+        alert("Time must be between 9:00 AM and 11:00 PM.");
         return;
     }
 
-    // 🕗 Bawal mag-book today kapag sarado na
-    const now = new Date();
-    const currentHour = now.getHours() + now.getMinutes() / 60;
+    localStorage.setItem('selectedService', service);
+    localStorage.setItem('reservationDate', dateInput);
+    localStorage.setItem('reservationTime', timeInput);
 
-    if (selectedDate.toDateString() === now.toDateString()) {
-        if (currentHour < 8 || currentHour >= 20) {
-            alert("Sorry, our shop is currently closed. We accept reservations from 8:00 AM to 8:00 PM only.");
-            return;
-        }
+    // Store tattoo quantity if applicable
+    if (service === 'Tattoo Small' || service === 'Tattoo Big') {
+        localStorage.setItem('tattooQuantity', tattooQuantityInput.value || 1);
+    } else {
+        localStorage.removeItem('tattooQuantity');
     }
-
-    // ✅ Save reservation details to localStorage
-    localStorage.setItem('service', service);
-    localStorage.setItem('date', dateInput);
-    localStorage.setItem('time', timeInput);
 
     alert("Reservation successful!");
     window.location.href = "payment.html";
 });
 
-cancelBtn.addEventListener("click", function () {
-    if (confirm("Are you sure you want to cancel your reservation?")) {
-        window.location.href = "services.html";
-    }
+//  Cancel button
+document.getElementById("cancelBtn").addEventListener("click", function () {
+  if (confirm("Are you sure you want to cancel your reservation?")) {
+    window.location.href = "services.html"; 
+  }
 });

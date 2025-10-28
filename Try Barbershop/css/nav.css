@@ -1,0 +1,49 @@
+/* Navbar */    
+nav {
+    background-color: #120901;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 70px;
+    min-height: fit-content;
+    /* Animate on load */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: navDrop 0.8s ease forwards 0.3s;
+}
+
+@keyframes navDrop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav .nav-links li a {
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links a:hover {
+  color: #f4b400;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav .logo:hover {
+    transform: scale(1.1);
+    color: #f5d98b;
+}

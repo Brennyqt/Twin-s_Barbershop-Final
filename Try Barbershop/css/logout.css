@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: black;
+    background: white;
     color: rgb(212, 209, 209);
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@ body {
 }
 
 main {
-    background: linear-gradient(to right, rgba(225, 215, 215, 0.1), rgba(46, 37, 31, 0.6));
+    background: black;
     padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,0.8);
