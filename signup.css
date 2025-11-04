@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: white;
+    color: #111;
+
+    /* Page load animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+    padding: 1rem;
+}
+
+
+
+
+.signup-form {
+    background: white;
+    color: black;
+    padding: 60px 70px; /* more spacious inside */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 550px; /* much wider box */
+    opacity: 0;
+    transform: scale(0.95);
+    animation: cardFadeIn 0.9s ease forwards 0.6s;
+}
+
+
+
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: textFade 0.7s ease forwards 0.9s;
+}
+
+@keyframes textFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signup-form label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.signup-form label:hover {
+    color: #f1c40f;
+}
+
+.signup-form input {
+    width: 95%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+  
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.signup-form input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #c6922b;
+    transform: scale(1.02);
+}
+
+.signup-form button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #111;
+    transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+    background-color: #c6922b;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.signup-form p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.signup-form a {
+    color: #f1c40f;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.signup-form a:hover {
+    text-decoration: underline;
+    color: #ffdd4d;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 1.2rem;
+    }
+    .signup-form {
+        padding: 1.5rem;
+    }
+    .signup-form h2 {
+        font-size: 1.2rem;
+    }
+}

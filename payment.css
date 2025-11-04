@@ -1,0 +1,115 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body base */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #f5c400;
+}
+
+/* Center only the form */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 80px; /* leave space for navbar */
+}
+
+/* Payment Card */
+.payment-card {
+  background: #fff;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+}
+
+.payment-card h2 {
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+/* Form Elements */
+label {
+  display: block;
+  text-align: left;
+  margin: 12px 0 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+select,
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #f5c400;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #e0b400;
+  transform: scale(1.02);
+}

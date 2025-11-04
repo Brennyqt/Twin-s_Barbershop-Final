@@ -1,0 +1,291 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: white;
+    color: #111;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: black;
+    
+}
+
+/* Navbar */
+nav {
+    background-color: #120901;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: navDrop 0.8s ease forwards 0.3s;
+}
+
+@keyframes navDrop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav .logo:hover {
+    transform: scale(1.1);
+    color: #f5d98b;
+}
+
+/* Nav links horizontals */
+nav .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+nav .nav-links li {
+    display: inline-block;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+    color: #f1c40f;
+    transform: translateY(-3px);
+}
+
+/* Main content */
+main {
+    padding: 2rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.6s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Form styling */
+
+.form-title{
+    margin-bottom: 15%;
+}
+
+form {
+    background:white;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 10px #000;
+    width: 300px;
+    max-width: 100%;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeSlideIn 0.8s ease forwards 0.8s;
+    
+}
+
+/* Unified input & select styling */
+form select,
+form input[type="date"],
+form input[type="time"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #111;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Fix alignment for date/time picker icons */
+form input[type="date"]::-webkit-calendar-picker-indicator,
+form input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 0.2rem;
+    margin: 0;
+}
+
+/* Optional: Add custom dropdown arrow for Service for consistent look */
+form select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M2 4l4 4 4-4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 12px;
+}
+
+/* Focus effect */
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #f1c40f;
+    box-shadow: 0 0 5px rgba(241, 196, 15, 0.5);
+}
+
+
+
+form label {
+    display: block;
+    color: black;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+
+form button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #f1c40f;
+   
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #111;
+    transition: background 0.3s, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: black;
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #f1c40f;
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #d4ac0d;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    nav .nav-links li {
+        width: 100%;
+    }
+
+    nav .nav-links li a {
+        display: block;
+        padding: 0.7rem;
+        background: #222;
+        border-radius: 5px;
+    }
+
+    form {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 1.2rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+
+    form button {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .back-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Center the reservation section vertically and horizontally */
+main {
+    min-height: calc(100vh - 80px); /* full height minus navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Container to hold form and title neatly */
+.reservation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center "Back to Home" button below the form */
+.reservation-container .back-btn {
+    margin-top: 1.5rem;
+}

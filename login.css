@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: white;
+    color: #111;
+
+    /*  Page load animastion */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Main container */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 1rem;
+}
+
+/* Login card */
+.login-content-container{
+    align-content: center;
+    min-height: fit-content;
+    height: 100vh;
+}
+.login-container {
+     background: white;
+    color: #140101;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    margin:0 auto;
+    border: 2px solid ;
+    /* Animation */
+    opacity: 0;
+    transform: scale(0.95);
+    animation: cardFadeIn 0.9s ease forwards 0.6s;
+}
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: textFade 0.7s ease forwards 0.8s;
+}
+
+@keyframes textFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.login-container label:hover {
+    color: #f1c40f;
+}
+
+.login-container input {
+    width: 93%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+   
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-container input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #c6922b;
+    transform: scale(1.02);
+}
+
+.login-container button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #111;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: black;
+    color: #d3cc00;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.login-container a {
+    color: #0f2df1;
+    text-decoration: none;
+    transition: color 0.3s 
+ease, transform 0.3s 
+ease;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+    color: black;
+    transform: translateY(-2px);
+    color: rgb(0, 0, 0);
+}
+
+/* responsive */
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .login-container {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .login-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .login-container input,
+    .login-container button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
+
+/* Spinner Overlay for Login */
+#spinnerOverlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(20, 10, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+#spinnerOverlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    color: #f5f5f5;
+    animation: fadeInUp 0.5s ease forwards;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.overlay-container h2 {
+    color: #f1c40f;
+    text-shadow: 0 0 10px #f1c40f;
+    margin-bottom: 0.5rem;
+    animation: pulseGlow 5s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 5px #ddb361; }
+    50% { text-shadow: 0 0 15px #f1c40f; }
+    100% { text-shadow: 0 0 5px #ddb361; }
+}
+
+.overlay-container p {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid #f1c40f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
