@@ -99,21 +99,21 @@ main {
     margin-top: 1.5rem;
     width: 100%;
     padding: 0.8rem;
-    background-color: #f1c40f;
+    background-color: black;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    color: #111;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
-
+@keyframes buttonFade { to { opacity:1; transform:translateY(0); } }
 .login-card button:hover {
-    background-color: black;
-    color: #fff;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    
+    background: #f4b400;
+    color: black;
+   
 }
 
 .login-card p {
@@ -124,16 +124,16 @@ main {
 }
 
 .login-card a {
-    color: #f1c40f;
+    color: #f4b400;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .login-card a:hover {
-    text-decoration: underline;
-    color: black;
+
+    color: #f4b400;
     transform: translateY(-2px);
-    color: white;
+  color: white;
 }
 
 /* responsive */

@@ -1,26 +1,62 @@
+// ----------------------------
+// PAYMENT QR TOGGLE
+// ----------------------------
 function updatePaymentUI() {
   const method = document.getElementById('method').value;
   const qrContainer = document.getElementById('qr-container');
   const qrImage = document.getElementById('qr-image');
   const referenceInput = document.getElementById('reference');
 
-  // Always show QR and reference input for both methods
   if (method === 'Cash') {
     qrContainer.style.display = 'block';
-    qrImage.src = 'qr1.jpg'; // 
+    qrImage.src = '../qr1.jpg';
     referenceInput.placeholder = 'Enter Reference Number';
-  } 
-  else if (method === 'GCash') {
+  } else if (method === 'GCash') {
     qrContainer.style.display = 'block';
-    qrImage.src = 'qr1.jpg'; // 
+    qrImage.src = '../qr1.jpg';
     referenceInput.placeholder = 'Enter GCash Reference Number';
-  } 
-  else {
+  } else {
     qrContainer.style.display = 'none';
     referenceInput.value = '';
   }
 }
 
+// ----------------------------
+// NAV DROPDOWNS
+// ----------------------------
+const notifToggle = document.querySelector(".notification-toggle");
+const notifDropdown = document.querySelector(".notification-dropdown");
+
+const accountToggle = document.querySelector(".account-toggle");
+const accountDropdown = document.querySelector(".dropdown");
+
+notifToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  notifDropdown.classList.toggle("show");
+  accountDropdown.classList.remove("show");
+});
+
+accountToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  accountDropdown.classList.toggle("show");
+  notifDropdown.classList.remove("show");
+});
+
+document.addEventListener("click", () => {
+  notifDropdown.classList.remove("show");
+  accountDropdown.classList.remove("show");
+});
+
+// MOBILE MENU TOGGLE
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// ----------------------------
+// PAYMENT FORM VALIDATION
+// ----------------------------
 const paymentForm = document.getElementById('paymentForm');
 
 paymentForm.addEventListener('submit', function(e) {
@@ -50,7 +86,6 @@ paymentForm.addEventListener('submit', function(e) {
     return;
   }
 
-  // Save payment + reservation info
   localStorage.setItem('paymentMethod', method);
   localStorage.setItem('paymentReference', reference);
   localStorage.setItem('downpayment', downpayment);
@@ -58,3 +93,4 @@ paymentForm.addEventListener('submit', function(e) {
   alert(`Payment successful!\nMethod: ${method}\nDownpayment: ₱${downpayment}`);
   window.location.href = "confirmation.html";
 });
+
