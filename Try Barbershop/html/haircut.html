@@ -44,21 +44,10 @@
       <div class="form-title">
         <h2>Reservation Form</h2>
       </div>
+<label for="service">Service</label>
+<input type="text" id="service" name="service" value="Haircut - ₱130" readonly>
 
-      <label for="service">Service</label>
-      <select id="service" name="service" required>
-        <option value="">Select a service</option>
-        <option value="Haircut">Haircut - ₱130</option>
-        <option value="Rebond">Rebond - ₱1,300</option>
-        <option value="Tattoo Small">Small Tattoo - ₱2,000</option>
-        <option value="Tattoo Big">Big Tattoo - ₱5,000</option>
-      </select>
-
-      <div id="tattooQuantitySection" style="display:none;">
-        <label for="tattooQuantity">Quantity of Tattoos</label>
-        <input type="number" id="tattooQuantity" name="tattooQuantity" min="1" placeholder="Enter quantity">
-      </div>
-
+      
       <label for="date">Date</label>
       <input type="date" id="date" name="date" required>
 

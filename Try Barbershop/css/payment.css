@@ -1,17 +1,22 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: white;
-  color: #111;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlideIn 1s ease-out forwards;
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-@keyframes fadeSlideIn {
+body {
+  background:white;
+  color:#111;
+  opacity:0;
+  transform:translateY(20px);
+  animation: fadeInPage 0.8s ease forwards;
+}
+
+@keyframes fadeInPage {
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity:1;
+    transform:translateY(0);
   }
 }
 
@@ -31,18 +36,7 @@ img {
   }
 }
 
-nav {
-  background: black;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: navDrop 0.8s ease forwards 0.3s;
-}
+
 
 @keyframes navDrop {
   to {
@@ -51,17 +45,7 @@ nav {
   }
 }
 
-nav .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
 
-nav .logo:hover {
-  transform: scale(1.1);
-  color: #f5d98b;
-}
 
 nav .nav-links {
   list-style: none;
@@ -98,12 +82,15 @@ main {
   }
 }
 
+
+
 form {
   background: white;
   color: black;
   padding: 2rem;
+  margin-top: 40px;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 0 10px #000;
@@ -142,7 +129,6 @@ form select {
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
-
 
 form input:focus, form select:focus {
   outline: none;
@@ -201,4 +187,53 @@ form button:hover {
     font-size: 0.9rem;
     padding: 0.6rem;
   }
+}
+
+.notification-dropdown,
+.dropdown {
+  position: absolute;
+  background: #1c1c1c;
+  top: 60px;
+  right: 20px;
+  min-width: 200px;
+  border-radius: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.notification-dropdown.show,
+.dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.notification-dropdown li,
+.dropdown li {
+  padding: 12px 15px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.notification-dropdown li:hover,
+.dropdown li:hover {
+ 
+  color: black;
+}
+
+.notification-toggle,
+.account-toggle {
+  cursor: pointer;
+
+   position: relative;
+  font-size: 25px;
+    color: white;
 }

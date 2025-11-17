@@ -7,16 +7,34 @@
     <title>Confirmation | Twin's Barbershop and Jake's Tattoo</title>
     <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
     <link rel="stylesheet" href="/Try Barbershop/css/confirmation.css">
+     <link rel="stylesheet" href="../css/navs.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
 </head>
 
 <body>
-    <nav>
-        <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
-        <ul class="nav-links">
+   <nav>
+  <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
 
-            <li><a href="logout.html">Log Out</a></li>
-        </ul>
-    </nav>
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+   
+
+
+  <!-- Account Icon -->
+    <li class="dropdown-parent account-menu">
+      <a href="#" class="account-icon"><i class="fa-solid fa-user-circle"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="mema.html">Profile</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
 
     <main>
         <div class="confirmation-details">
@@ -34,6 +52,7 @@
 
 
     <script src="/Try Barbershop/js/confirmation.js"></script>
+    <script src="/Try Barbershop/js/dashboard.js"></script>
 </body>
 
 </html>

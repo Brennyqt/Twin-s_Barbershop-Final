@@ -4,40 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Twin's Barbershop and Jake's Tattoo</title>
+    
     <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
+    <link rel="stylesheet" href="../css/navs.css"/>
     <link rel="stylesheet" href="/Try Barbershop/css/services.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+
 </head>
 <body>
-    <nav>
-        <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
-        <ul class="nav-links">
-            <li><a href="dashboard.html">Home</a></li>
-            <li><a href="reservation.html">Make a Reservation</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="logout.html">Log Out</a></li>
-        </ul>
-    </nav>
+   <nav>
+  <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
+
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+  
+   
+
+
+    <!-- Account Icon -->
+    <li class="dropdown-parent account-menu">
+      <a href="#" class="account-icon"><i class="fa-solid fa-user-circle"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="mema.html">Profile</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
 
     <main>
         <h2>Our Services</h2>
         <div class="services-list">
-            <div class="service-card" onclick="location.href='reservation.html'">
+            <div class="service-card" onclick="location.href='haircut.html'">
             <h3>Haircut</h3>
             <p>₱130</p>
             </div>
 
-            <div class="service-card" onclick="location.href='reservation.html'">
+            <div class="service-card" onclick="location.href='rebond.html'">
                 <h3>Rebond</h3>
                 <p>₱1,300</p>
             </div>
           
         
-            <div class="service-card" onclick="location.href='reservation.html'">
+            <div class="service-card" onclick="location.href='smalltattoo.html'">
                 <h3>Small Tattoo</h3>
                 <p>₱2,000</p>
             </div>
          
-            <div class="service-card" onclick="location.href='reservation.html'">
+            <div class="service-card" onclick="location.href='bigtattoo.html'">
                 <h3>Big Tattoo</h3>
                 <p>₱5,000</p>
             </div>
@@ -45,6 +64,7 @@
         <a href="dashboard.html" class="back-btn">Back</a>
     </main>
 
-    <script src="/Try Barbershop/js/script.js"></script>
+    
+    <script src="/Try Barbershop/js/dashboard.js"></script>
 </body>
 </html>

@@ -1,73 +1,99 @@
-const reservationForm = document.getElementById('reservationForm');
-const cancelBtn = document.getElementById('cancelBtn');
+document.addEventListener('DOMContentLoaded', () => {
 
-// Retrieve selected service from local storage
-const selectedService = localStorage.getItem('selectedService');
-if (selectedService) {
-    document.getElementById('service').value = selectedService;
-    localStorage.removeItem('selectedService');
-}
+    const reservationForm = document.getElementById('reservationForm');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const serviceSelect = document.getElementById('service');
+    const tattooQuantitySection = document.getElementById('tattooQuantitySection');
+    const tattooQuantityInput = document.getElementById('tattooQuantity');
 
-// tattoo quantity logic 
-const serviceSelect = document.getElementById('service');
-const tattooQuantitySection = document.getElementById('tattooQuantitySection');
-const tattooQuantityInput = document.getElementById('tattooQuantity');
+    const dropdownParents = document.querySelectorAll('.dropdown-parent');
+    dropdownParents.forEach(parent => {
+        const icon = parent.querySelector('a, i');
+        icon.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownParents.forEach(otherParent => {
+                if (otherParent !== parent && otherParent.classList.contains('active')) {
+                    otherParent.classList.remove('active');
+                }
+            });
+            parent.classList.toggle('active');
+        });
+    });
 
-serviceSelect.addEventListener('change', function() {
-    const selectedService = serviceSelect.value;
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown-parent')) {
+            dropdownParents.forEach(parent => parent.classList.remove('active'));
+        }
+    });
 
-    //  tattoo options
-    if (selectedService === 'Tattoo Small' || selectedService === 'Tattoo Big') {
-        tattooQuantitySection.style.display = 'block';
-        tattooQuantityInput.required = true;
-    } else {
-        tattooQuantitySection.style.display = 'none';
-        tattooQuantityInput.required = false;
-        tattooQuantityInput.value = '';
-    }
-});
-
-// Reservation form submission 
-reservationForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const dateInput = document.getElementById('date').value;
-    const timeInput = document.getElementById('time').value;
-    const service = serviceSelect.value;
-
-    const selectedDate = new Date(dateInput);
-    const today = new Date();
-    today.setHours(0,0,0,0);
-
-    if (selectedDate < today) {
-        alert("You cannot select a past date.");
-        return;
+    const selectedService = localStorage.getItem('selectedService');
+    if (selectedService) {
+        serviceSelect.value = selectedService;
+        if (selectedService === 'Tattoo Small' || selectedService === 'Tattoo Big') {
+            tattooQuantitySection.style.display = 'block';
+            tattooQuantityInput.required = true;
+        }
+        localStorage.removeItem('selectedService');
     }
 
-    const [hours, minutes] = timeInput.split(":").map(Number);
-    if (hours < 9 || hours > 23 || (hours === 23 && minutes > 0)) {
-        alert("Time must be between 9:00 AM and 11:00 PM.");
-        return;
-    }
+    serviceSelect.addEventListener('change', function() {
+        const service = serviceSelect.value;
+        if (service === 'Tattoo Small' || service === 'Tattoo Big') {
+            tattooQuantitySection.style.display = 'block';
+            tattooQuantityInput.required = true;
+        } else {
+            tattooQuantitySection.style.display = 'none';
+            tattooQuantityInput.required = false;
+            tattooQuantityInput.value = '';
+        }
+    });
 
-    localStorage.setItem('selectedService', service);
-    localStorage.setItem('reservationDate', dateInput);
-    localStorage.setItem('reservationTime', timeInput);
+    reservationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const dateInput = document.getElementById('date').value;
+        const timeInput = document.getElementById('time').value;
+        const service = serviceSelect.value;
 
-    // Store tattoo quantity if applicable
-    if (service === 'Tattoo Small' || service === 'Tattoo Big') {
-        localStorage.setItem('tattooQuantity', tattooQuantityInput.value || 1);
-    } else {
-        localStorage.removeItem('tattooQuantity');
-    }
+        if (!dateInput || !timeInput || !service) {
+            alert("Please fill out all required fields.");
+            return;
+        }
 
-    alert("Reservation successful!");
-    window.location.href = "payment.html";
-});
+        const [hours, minutes] = timeInput.split(":").map(Number);
+        const reservationDateTime = new Date(dateInput);
+        reservationDateTime.setHours(hours, minutes, 0, 0);
+        const now = new Date();
 
-//  Cancel button
-document.getElementById("cancelBtn").addEventListener("click", function () {
-  if (confirm("Are you sure you want to cancel your reservation?")) {
-    window.location.href = "services.html"; 
-  }
+        if (reservationDateTime < now) {
+            alert("You cannot select a past date or a past time today.");
+            return;
+        }
+
+        if (hours < 8 || hours > 20 || (hours === 20 && minutes > 0)) {
+            alert("Time must be 8:00 AM to 8:00 PM.");
+            return;
+        }
+
+        localStorage.setItem('selectedService', service);
+        localStorage.setItem('reservationDate', dateInput);
+        localStorage.setItem('reservationTime', timeInput);
+
+        if (service === 'Tattoo Small' || service === 'Tattoo Big') {
+            localStorage.setItem('tattooQuantity', tattooQuantityInput.value || 1);
+        } else {
+            localStorage.removeItem('tattooQuantity');
+        }
+
+        window.location.href = "payment.html";
+    });
+
+    cancelBtn.addEventListener("click", function () {
+        window.location.href = "dashboard.html";
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 });

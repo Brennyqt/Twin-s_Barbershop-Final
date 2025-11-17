@@ -1,73 +1,26 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: white;
-    color: #111;
-
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideIn 1s ease-out forwards;
+  background:white;
+  color:#111;
+  opacity:0;
+  transform:translateY(20px);
+  animation: fadeInPage 0.8s ease forwards;
 }
 
-@keyframes fadeSlideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeInPage {
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-nav {
-    background-color: #120901;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
 
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: navDrop 0.8s ease forwards 0.3s;
-}
-
-@keyframes navDrop {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-nav .logo:hover {
-    transform: scale(1.1);
-    color: #f5d98b;
-}
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-
-nav .nav-links li a {
-    text-decoration: none;
-    color: #f5f5f5;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
-    position: relative;
-}
-
-nav .nav-links li a:hover {
-    color: #f1c40f;
-    transform: translateY(-3px);
-}
 
 
 main {
@@ -148,71 +101,24 @@ main {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.7rem 1.5rem;
-    background-color: #f1c40f; 
-    color: #111;
+    background-color: black; 
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.3s ease;
 }
-
+@keyframes buttonFade { to { opacity:1; transform:translateY(0); } }
 .back-btn:hover {
-    background-color: black;
+    background: #f4b400;
     transform: scale(1.05);
-    color: white;
+    color: black;
+}
+
+.account-icon, .notification-icon {
+  font-size:25px;
+  color:white;
 }
 
 
-@media (max-width: 1024px) {
-    .services-list {
-        gap: 1.5rem;
-    }
-}
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav .nav-links {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
-        gap: 1rem;
-    }
-
-    nav .nav-links li {
-        width: 100%;
-    }
-
-    nav .nav-links li a {
-        display: block;
-        padding: 0.7rem;
-        background: #222;
-        border-radius: 5px;
-    }
-
-    .service-card {
-        width: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    nav .logo {
-        font-size: 1.2rem;
-    }
-
-    .service-card {
-        width: 100%;
-    }
-
-    .back-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    main {
-        padding: 1rem;
-    }
-}

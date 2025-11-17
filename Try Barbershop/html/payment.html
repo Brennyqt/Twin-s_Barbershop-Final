@@ -6,23 +6,43 @@
   <title>Payment | Twin's Barbershop and Jake's Tattoo</title>
   <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
   <link rel="stylesheet" href="/Try Barbershop/css/payment.css">
+    <link rel="stylesheet" href="../css/navs.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+
 </head>
 
 <body>
   <nav>
     <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
     <ul class="nav-links">
-      <li><a href="dashboard.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      
-      <li><a href="history.html">History</a></li>
-      <li><a href="logout.html">Log Out</a></li>
-    </ul>
+     <div class="menu-toggle" id="menuToggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+   
+
+    <li class="notification-menu">
+      <div class="notification-toggle">
+     
+
+
+    <li class="account-menu"> 
+      <div class="account-toggle">
+        <i class="fa-solid fa-user-circle account-icon"></i>
+      </div>
+      <ul class="dropdown">
+        <li><a href="mema.html">Profile</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </li>
+  </ul>
   </nav>
 
   <main>
     <form id="paymentForm">
-         <h2>Payment</h2>
+         <h2>Payment Form</h2>
       <label for="method">Payment Method</label>
       <select id="method" name="method" required onchange="updatePaymentUI()">
         
@@ -49,5 +69,8 @@
   </main>
 
   <script src="/Try Barbershop/js/payment.js"></script>
+  
+  
+  
 </body>
 </html>
