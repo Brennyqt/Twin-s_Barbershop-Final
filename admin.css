@@ -1,0 +1,314 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark text for readability */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Main Header */
+h1 {
+    text-align: center;
+    color: #1a1a1a; /* Deep dark gray */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Headers */
+h2 {
+    color: #2c3e50; /* Dark blue */
+    font-size: 1.8rem;
+    margin: 30px 0 15px 0;
+    padding: 15px 20px;
+    background: #f8f9fa; /* Light gray background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Container */
+table {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+/* Table Header */
+thead {
+    background: #3498db; /* Eye-catching blue */
+    color: #ffffff;
+}
+
+thead th {
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Table Body */
+tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #ecf0f1; /* Light gray hover effect */
+}
+
+/* Status Column */
+.status {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+tbody tr[data-id] .status {
+    color: #f39c12; /* Yellow-orange for pending */
+}
+
+tbody tr[data-id] .status.accepted {
+    color: #2ecc71; /* Green for accepted */
+}
+
+tbody tr[data-id] .status.declined {
+    color: #e74c3c; /* Red for declined */
+}
+
+/* No Data Row */
+.no-data td {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Accept Button */
+.accept-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); /* Green gradient */
+    color: #ffffff;
+}
+
+.accept-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.4);
+}
+
+.accept-btn:active {
+    transform: translateY(0);
+}
+
+/* Decline Button */
+.decline-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* Red gradient */
+    color: #ffffff;
+}
+
+.decline-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4);
+}
+
+.decline-btn:active {
+    transform: translateY(0);
+}
+
+/* Dropdown Button */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #3498db; /* Blue button */
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown content when hovering */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the dropdown button color on hover */
+.dropdown:hover .dropbtn {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* ============================
+   Responsive Design
+   ============================ */
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    thead th,
+    tbody td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        padding: 12px 15px;
+    }
+
+    /* Stack table for mobile */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tbody tr {
+        margin-bottom: 15px;
+        border: 2px solid #3498db; /* Blue border for mobile view */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    tbody td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    tbody td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        text-align: left;
+        font-weight: 600;
+        color: #2c5f2d; /* Dark green for labels */
+    }
+
+    button {
+        display: inline-block;
+        width: auto;
+        margin: 5px 2px;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    .no-data td {
+        padding: 20px;
+    }
+
+    .no-data td:before {
+        content: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 15px 10px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    button {
+        width: calc(50% - 4px);
+        margin: 3px 2px;
+        padding: 10px 8px;
+        font-size: 0.8rem;
+    }
+
+    tbody td {
+        padding: 10px 15px 10px 50%;
+        font-size: 0.85rem;
+    }
+}
