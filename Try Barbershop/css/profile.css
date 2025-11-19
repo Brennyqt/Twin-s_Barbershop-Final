@@ -1,0 +1,110 @@
+/* ---------------- MAIN CONTAINER ---------------- */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 0;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ---------------- PROFILE CARD ---------------- */
+.profile-card.landscape {
+  background: white;
+  padding: 2rem;
+  margin-top: 65px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  width: 100%;
+  max-width: 700px;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: cardFadeIn 0.9s ease forwards 0.6s;
+}
+
+.profile-card h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: textFade 0.7s ease forwards 0.8s;
+}
+
+.profile-card .profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+}
+
+.profile-card .info-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.profile-card .info-group label:hover {
+  color: #f1c40f;
+}
+
+.profile-card .info-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  background: #f2f2f2;
+  color: #333;
+  cursor: not-allowed;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.profile-card .edit-btn:hover,
+.profile-card .back-btn:hover {
+  background-color: black;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.profile-card .profile-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .profile-card.landscape {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .profile-card .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .profile-card .profile-buttons {
+    flex-direction: column;
+  }
+
+  .profile-card .edit-btn,
+  .profile-card .back-btn {
+    width: 100%;               /* full width on mobile */
+  }
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes cardFadeIn {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes textFade {
+  to { opacity: 1; transform: translateY(0); }
+}

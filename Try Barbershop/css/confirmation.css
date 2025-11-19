@@ -1,17 +1,4 @@
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
 
-body {
-  background:white;
-  color:#111;
-  opacity:0;
-  transform:translateY(20px);
-  animation: fadeInPage 0.8s ease forwards;
-}
 
 @keyframes fadeInPage {
   to {
@@ -93,12 +80,13 @@ h2 {
 }
 
 /*  Back Button */
-.back-btn {
+.back-btn, .edit-btn {
     display: inline-block;
+    
     margin-top: 2rem;
     padding: 0.7rem 1.5rem;
-    background-color: #f1c40f;
-    color: #111;
+    background-color: black;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -109,15 +97,9 @@ h2 {
     animation: textFade 0.7s ease forwards 1.2s;
 }
 
-.back-btn:hover {
+.back-btn, .edit-btn:hover {
     background-color: black;
     color: white;
     transform: scale(1.05);
 }
-
-.account-icon, .notification-icon {
-  font-size:25px;
-  color:white;
-}
-
 

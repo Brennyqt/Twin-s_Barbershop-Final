@@ -7,7 +7,7 @@
    <link rel="icon" href="/Try Barbershop/twin.jpg">
   <link rel="stylesheet" href="../css/reservation.css">
   <link rel="stylesheet" href="../css/navs.css"/>
-  
+  <link rel="stylesheet" href="../css/index.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
 
 </head>
@@ -15,28 +15,20 @@
 
 <nav>
   <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
-
-  <div class="menu-toggle" id="menuToggle">
-    <i class="fa-solid fa-bars"></i>
-  </div>
-
-  <ul class="nav-links" id="navLinks">
-  
-   
-
-
-    <!-- Account Icon -->
+  <ul class="nav-links">
     <li class="dropdown-parent account-menu">
-      <a href="#" class="account-icon"><i class="fa-solid fa-user-circle"></i></a>
+      <a href="#" class="account-icon" id="accountToggle">ACCOUNT</a>
+
       <ul class="dropdown-menu">
-        <li><a href="mema.html">Profile</a></li>
+        <li><a href="profile.html">Profile</a></li>
         <li><a href="history.html">History</a></li>
         <li><a href="logout.html">Logout</a></li>
       </ul>
-    </li>
 
+    </li>
   </ul>
 </nav>
+
 
 <main>
   <div class="form-container">
@@ -62,5 +54,6 @@
 
 
  <script src="../js/reservation.js" defer></script>
+ 
 </body>
 </html>

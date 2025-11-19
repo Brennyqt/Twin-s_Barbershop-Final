@@ -1,17 +1,4 @@
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
 
-body {
-  background:white;
-  color:#111;
-  opacity:0;
-  transform:translateY(20px);
-  animation: fadeInPage 0.8s ease forwards;
-}
 
 @keyframes fadeInPage {
   to {
@@ -47,25 +34,7 @@ img {
 
 
 
-nav .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-}
 
-nav .nav-links li a {
-  text-decoration: none;
-  color: #f5f5f5;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav .nav-links li a:hover {
-  color: #f1c40f;
-}
 
 main {
   padding: 2rem;
@@ -157,83 +126,4 @@ form button:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  nav .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  form {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  nav .logo {
-    font-size: 1.2rem;
-  }
-
-  form {
-    padding: 1rem;
-  }
-
-  form input, form select, form button {
-    font-size: 0.9rem;
-    padding: 0.6rem;
-  }
-}
-
-.notification-dropdown,
-.dropdown {
-  position: absolute;
-  background: #1c1c1c;
-  top: 60px;
-  right: 20px;
-  min-width: 200px;
-  border-radius: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.notification-dropdown.show,
-.dropdown.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.notification-dropdown li,
-.dropdown li {
-  padding: 12px 15px;
-  color: white;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.notification-dropdown li:hover,
-.dropdown li:hover {
- 
-  color: black;
-}
-
-.notification-toggle,
-.account-toggle {
-  cursor: pointer;
-
-   position: relative;
-  font-size: 25px;
-    color: white;
-}

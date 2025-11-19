@@ -5,14 +5,18 @@
     <meta http-equiv="refresh" content="3;url=login.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logging Out...</title>
-    <link rel="stylesheet" href="/Try Barbershop/css/logout.css">
+    <link rel="stylesheet" href="/Try Barbershop/css/login.css">
     <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
 </head>
-<body>
+<body class="logout-page"> 
     <main>
-        <h2>Logging out...</h2>
-        
-        <div class="spinner"></div>
+        <div id="spinnerOverlay" class="active">
+            <div class="overlay-card">
+                <h2>Logging out...</h2>
+                <div class="spinner"></div>
+            </div>
+        </div>
     </main>
+    <script src="/Try Barbershop/js/login.js"></script>
 </body>
 </html>

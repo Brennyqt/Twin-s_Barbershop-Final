@@ -1,23 +1,23 @@
-function showPage(pageId) {
-  document.querySelectorAll(".page").forEach(p => p.classList.add("hidden"));
-  document.getElementById(pageId).classList.remove("hidden");
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownParents = document.querySelectorAll('.dropdown-parent');
 
-function goToServices(event) {
-  if (event) event.preventDefault();
-  showPage("servicesPage");
-}
+  dropdownParents.forEach(parent => {
+    const icon = parent.querySelector('a'); // clickable user icon
+    icon.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
 
-function goToAbout(event) {
-  if (event) event.preventDefault();
-  showPage("aboutPage");
-}
+      // close other dropdowns
+      dropdownParents.forEach(otherParent => {
+        if (otherParent !== parent) otherParent.classList.remove('active');
+      });
 
-function goToPricing(event) {
-  if (event) event.preventDefault();
-  showPage("pricingPage");
-}
+      parent.classList.toggle('active');
+    });
+  });
 
-function goBack(toPage) {
-  showPage(toPage);
-}
+  // Close dropdown if clicked outside
+  document.addEventListener('click', () => {
+    dropdownParents.forEach(parent => parent.classList.remove('active'));
+  });
+});

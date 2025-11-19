@@ -7,38 +7,27 @@
   <link rel="icon" type="icon" href="/Try Barbershop/twin.jpg">
   <link rel="stylesheet" href="/Try Barbershop/css/payment.css">
     <link rel="stylesheet" href="../css/navs.css"/>
+    <link rel="stylesheet" href="../css/index.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
 
 </head>
 
 <body>
-  <nav>
-    <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
-    <ul class="nav-links">
-     <div class="menu-toggle" id="menuToggle">
-    <i class="fa-solid fa-bars"></i>
-  </div>
+ <nav>
+  <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
+  <ul class="nav-links">
+    <li class="dropdown-parent account-menu">
+      <a href="#" class="account-icon" id="accountToggle">ACCOUNT</a>
 
-  <ul class="nav-links" id="navLinks">
-   
-
-    <li class="notification-menu">
-      <div class="notification-toggle">
-     
-
-
-    <li class="account-menu"> 
-      <div class="account-toggle">
-        <i class="fa-solid fa-user-circle account-icon"></i>
-      </div>
-      <ul class="dropdown">
-        <li><a href="mema.html">Profile</a></li>
+      <ul class="dropdown-menu">
+        <li><a href="profile.html">Profile</a></li>
         <li><a href="history.html">History</a></li>
         <li><a href="logout.html">Logout</a></li>
       </ul>
+
     </li>
   </ul>
-  </nav>
+</nav>
 
   <main>
     <form id="paymentForm">
@@ -62,13 +51,15 @@
       <input type="number" id="downpayment" min="0" placeholder="Enter amount" required>
 
       <button type="submit">Confirm Payment</button>
-      <button type="button" onclick="window.location.href='reservation.html'">Back</button>
+
+      <button type="button" onclick="window.location.href='services.html'">Back</button>
     </form>
 
     
   </main>
 
   <script src="/Try Barbershop/js/payment.js"></script>
+  <script src="/Try Barbershop/js/navigation.js"></script>
   
   
   
