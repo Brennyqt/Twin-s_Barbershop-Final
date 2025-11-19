@@ -25,7 +25,6 @@ nav {
     opacity: 0;
     transform: translateY(-20px);
     animation: navDrop 0.8s ease forwards 0.3s;
-    
 }
 
 @keyframes navDrop {
@@ -118,47 +117,109 @@ nav ul li a:hover {
 
 .logo-slider img.active { opacity:1; }
 
-/* SERVICES SLIDER */
-.services { padding:80px 5%; text-align:center; }
-.services h2 { font-size:2rem; margin-bottom:40px; }
+/* --- NEW SERVICE GRID STYLES --- */
 
-.services-slider {
+.services-grid-container {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    gap: 40px;
+}
+
+.service-section {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-section h2 { 
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
+    color: #111;
+}
+
+/* 1. Wrapper for managing overflow and positioning the arrow */
+.grid-wrapper {
     position: relative;
-    width: 320px;
-    height: 500px;
-    margin:0 auto;
-    border:3px solid #000;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,0.3);
-    background:#fff;
+    max-height: 450px; /* Set a max height to enable scrolling for overflow */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-bottom: 30px; /* Space for the arrow */
 }
 
-.service-slide {
-    position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    transform: translateX(100%);
-    transition: transform 0.45s ease;
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns inside each section (as per your last CSS) */
+    gap: 15px;
 }
-.service-slide:first-child { transform: translateX(0); }
-.service-slide img {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:12px;
-    display:block;
+
+.service-item {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 1 / 1; 
 }
+
+.service-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.service-item img:hover {
+    transform: scale(1.05);
+}
+
+/* 2. Style for the Scroll Indicator (Arrow) */
+.scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #111; 
+    font-size: 2.5rem;
+    cursor: pointer;
+    background: #f4f4f4; /* Match background for blending */
+    border-radius: 50%;
+    padding: 5px;
+    /* Optional: Add a subtle animation to hint at scrolling */
+    animation: bounce 1.5s infinite;
+    opacity: 0.8;
+}
+
+/* Hide the scroll indicator by default and only show it 
+   in sections we manually marked with has-more-content */
+.grid-wrapper:not(.has-more-content) .scroll-indicator {
+    display: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
 
 /* ABOUT */
-.about { padding:80px 10%; text-align:center; background:#f9f9f9; margin: 0 0 90px auto; }
+.about { padding:80px 10%; text-align:center; background:#f9f9f9; }
 .about h2 { font-size:2rem; margin-bottom:20px; }
 .about p { font-size:1.1rem; margin-bottom:15px; line-height:1.6; }
 .about a { color:#111; text-decoration:none; font-weight:500; }
 .about a:hover { color:#f4b400; }
 
 /* FOOTER */
-footer { text-align:center; padding:15px; background:#111; color:white;  }
+footer { text-align:center; padding:15px; background:#111; color:white; }
 
 /* FADE-IN ON SCROLL */
 .fade-in {
@@ -176,5 +237,9 @@ footer { text-align:center; padding:15px; background:#111; color:white;  }
     .hero-container { flex-direction: column-reverse; text-align:center; }
     .hero-text { text-align:center; }
     .logo-slider { width:250px; height:250px; }
-    .services-slider { width:250px; height:400px; }
+    
+    /* Responsive changes for the service grid */
+    .services-grid-container {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
 }

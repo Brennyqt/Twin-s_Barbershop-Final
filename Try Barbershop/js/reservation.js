@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     cancelBtn.addEventListener("click", function () {
-        window.location.href = "dashboard.html";
+        window.location.href = "services.html";
     });
 
     const menuToggle = document.getElementById('menuToggle');
@@ -97,3 +97,34 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('active');
     });
 });
+
+function calculateTotal() {
+    // 1. Kunin ang elements
+    const quantityInput = document.getElementById('tattooQuantity');
+    const serviceInput = document.getElementById('service');
+    const totalPriceInput = document.getElementById('totalPrice');
+
+    // 2. Kunin ang values
+    // Gamitin ang data-base-price attribute para makuha ang presyo
+    const basePrice = parseFloat(serviceInput.getAttribute('data-base-price'));
+    
+    // Siguraduhin na ang quantity ay valid at hindi bababa sa 1
+    let quantity = parseInt(quantityInput.value);
+    
+    if (isNaN(quantity) || quantity < 1) {
+        quantity = 1;
+        quantityInput.value = 1; // I-set pabalik sa 1 kung invalid
+    }
+
+    // 3. I-calculate ang Total
+    const total = basePrice * quantity;
+
+    // 4. I-format ang presyo at ilagay sa Total Price field
+    // Ginamit ang toLocaleString() para may comma (e.g., 2,000)
+    const formattedTotal = '₱' + total.toLocaleString('en-US'); 
+    
+    totalPriceInput.value = formattedTotal;
+}
+
+// Para mag-set ng initial price sa pag-load ng page
+document.addEventListener('DOMContentLoaded', calculateTotal);

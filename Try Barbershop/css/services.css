@@ -1,17 +1,4 @@
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
 
-body {
-  background:white;
-  color:#111;
-  opacity:0;
-  transform:translateY(20px);
-  animation: fadeInPage 0.8s ease forwards;
-}
 
 @keyframes fadeInPage {
   to {
@@ -114,11 +101,5 @@ main {
     transform: scale(1.05);
     color: black;
 }
-
-.account-icon, .notification-icon {
-  font-size:25px;
-  color:white;
-}
-
 
 

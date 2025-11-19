@@ -17,6 +17,34 @@ body {
     }
 }
 
+/* Add this new rule to your login.css file */
+.logout-page {
+    /* Set the body background to the same dark color as the login overlay */
+    background: rgba(20, 10, 0, 0.95);
+    /* Ensure the body is covering the full screen */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* We need to adjust the spinner overlay for the logout page */
+.logout-page #spinnerOverlay {
+    /* Since the body is already dark, make the overlay itself transparent */
+    background: transparent;
+    /* Remove redundant height/width settings, as the body handles the full screen */
+    position: static;
+    width: auto;
+    height: auto;
+    /* Ensure the spinner overlay is visible */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.logout-page main {
+    /* Ensure the main tag doesn't interfere with centering */
+    display: contents;
+}
 
 
 /* Main container */
@@ -133,7 +161,7 @@ main {
 
     color: #f4b400;
     transform: translateY(-2px);
-  color: white;
+    color: black;
 }
 
 /* responsive */
@@ -227,6 +255,7 @@ main {
 }
 
 @keyframes spin {
+    0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 

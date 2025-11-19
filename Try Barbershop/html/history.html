@@ -4,20 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reservation History | Twin's Barbershop and Jake's Tattoo</title>
+  <title>History | Twin's Barbershop and Jake's Tattoo</title>
+     <link rel="icon" href="/Try Barbershop/twin.jpg">
+  <link rel="stylesheet" href="../css/navs.css"/>
+  <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="/Try Barbershop/css/history.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
 </head>
+<nav>
+  <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
+  <ul class="nav-links">
+    <li class="dropdown-parent account-menu">
+      <a href="#" class="account-icon" id="accountToggle">ACCOUNT</a>
 
-<body>
-  <nav>
-    <div class="logo">Twin's Barbershop and Jake's Tattoo</div>
-    <ul class="nav-links">
-      <li><a href="dashboard.html">Home</a></li>
-     
-      <li><a href="reservation.html">Make a Reservation</a></li>
-      <li><a href="logout.html">Log Out</a></li>
-    </ul>
-  </nav>
+      <ul class="dropdown-menu">
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+
+    </li>
+  </ul>
+</nav>
+
+
+
 
   <main class="content">
     <h2>Your Reservation History</h2>
@@ -25,10 +36,16 @@
 
     <div id="historyContainer"></div>
 
+    <div class="button-center">
+    <a href="dashboard.html" class="back-btn">Back To Home Page</a>
+    </div>
+
 
   </main>
 
   <script src="/Try Barbershop/js/history.js"></script>
+  <script src="../js/dashboard.js" defer></script>
+  
 </body>
 
 </html>
