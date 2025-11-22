@@ -58,8 +58,8 @@ main {
 
 /* Login card */
 .login-card {
-     background: white;
-  color: #140101;
+     background: #cec1b0;
+    color: #140101;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
@@ -83,7 +83,7 @@ main {
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
-
+    color: black;
     opacity: 0;
     transform: translateY(-10px);
     animation: textFade 0.7s ease forwards 0.8s;
@@ -104,7 +104,7 @@ main {
 }
 
 .login-card label:hover {
-    color: #f1c40f;
+    color: #cec1b0;
 }
 
 .login-card input {
@@ -127,7 +127,7 @@ main {
     margin-top: 1.5rem;
     width: 100%;
     padding: 0.8rem;
-    background-color: black;
+    background-color: #4e342c;
     color: white;
     border: none;
     border-radius: 5px;
@@ -139,8 +139,8 @@ main {
 @keyframes buttonFade { to { opacity:1; transform:translateY(0); } }
 .login-card button:hover {
     
-    background: #f4b400;
-    color: black;
+    background: #9d7b5a;
+    
    
 }
 
@@ -152,14 +152,14 @@ main {
 }
 
 .login-card a {
-    color: #f4b400;
+    color: #4e342c;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .login-card a:hover {
 
-    color: #f4b400;
+    color: #cec1b0;
     transform: translateY(-2px);
     color: black;
 }

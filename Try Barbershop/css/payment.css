@@ -84,7 +84,7 @@ form label {
 }
 
 form label:hover {
-  color: #f1c40f;
+  color: #cec1b0;
 }
 
 form input,
@@ -120,7 +120,7 @@ form button {
 }
 
 form button:hover {
-  background-color: black;
+  background-color: #cec1b0;
   color: white;
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);

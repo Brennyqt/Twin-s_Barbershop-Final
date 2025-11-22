@@ -31,7 +31,7 @@ main {
 }
 
 .service-card {
-    background-color: #222;
+    background-color: #4e342c;
     color: white;
     padding: 1.5rem;
     border-radius: 10px;
@@ -75,7 +75,7 @@ main {
 /* Hover effect */
 .service-card:hover {
     transform: translateY(-5px) scale(1.03);
-    background-color: #2d2d29e7;
+    background-color: #9d7b5a;
     box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
@@ -88,7 +88,7 @@ main {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.7rem 1.5rem;
-    background-color: black; 
+    background-color: #4e342c; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -97,9 +97,9 @@ main {
 }
 @keyframes buttonFade { to { opacity:1; transform:translateY(0); } }
 .back-btn:hover {
-    background: #f4b400;
+    background: #9d7b5a;
     transform: scale(1.05);
-    color: black;
+    color: white;
 }
 
 

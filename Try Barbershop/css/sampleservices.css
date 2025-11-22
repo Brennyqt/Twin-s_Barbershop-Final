@@ -20,7 +20,7 @@ body {
 
 /* NAVBAR */
 nav {
-    background: #111;
+    background: black;
     padding: 15px 0;
     opacity: 0;
     transform: translateY(-20px);
@@ -33,7 +33,7 @@ nav {
 
 nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     list-style: none;
 }
 
@@ -45,7 +45,7 @@ nav ul li a {
     transition: 0.3s;
 }
 nav ul li a:hover { 
-    color: #f4b400; }
+    color: #cec1b0; }
 
 /* HERO SECTION */
 .hero {
@@ -92,7 +92,7 @@ nav ul li a:hover {
     animation: buttonFade 0.8s ease-out forwards 0.6s;
 }
 @keyframes buttonFade { to { opacity:1; transform:translateY(0); } }
-.btn:hover { background:#f4b400; color:#111; }
+.btn:hover { background:#cec1b0; color:#111; }
 
 /* LOGO SLIDER */
 .hero-right { flex:1; display:flex; justify-content:center; align-items:center; }
@@ -216,10 +216,10 @@ nav ul li a:hover {
 .about h2 { font-size:2rem; margin-bottom:20px; }
 .about p { font-size:1.1rem; margin-bottom:15px; line-height:1.6; }
 .about a { color:#111; text-decoration:none; font-weight:500; }
-.about a:hover { color:#f4b400; }
+.about a:hover { color:#cec1b0; }
 
 /* FOOTER */
-footer { text-align:center; padding:15px; background:#111; color:white; }
+footer { text-align:center; padding:15px; background:black; color:white; }
 
 /* FADE-IN ON SCROLL */
 .fade-in {

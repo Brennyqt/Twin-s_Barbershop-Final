@@ -27,7 +27,7 @@ main {
 }
 
 .signup-card {
-    background: white;
+    background: #cec1b0;
     color: black;
     padding: 20px;
    
@@ -61,7 +61,7 @@ main {
 .signup-card h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    
+        
     opacity: 0;
     transform: translateY(-10px);
     animation: textFade 0.7s ease forwards 0.9s;
@@ -82,7 +82,7 @@ main {
 }
 
 .signup-card label:hover {
-    color: #f1c40f;
+    color: #cec1b0;
 }
 
 .signup-card input {
@@ -105,18 +105,18 @@ main {
     margin-top: 1.5rem;
     width: 100%;
     padding: 0.7rem;
-    background-color: #f1c40f;
+    background-color: #4e342c;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    color: #111;
+    color: white;
     transition: all 0.3s ease;
 }
 
 .signup-card button:hover {
-    background-color: #c6922b;
-    color: #fff;
+    background-color: #9d7b5a;
+    color: #cec1b0;
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
@@ -129,14 +129,15 @@ main {
 }
 
 .signup-card a {
-    color: #f1c40f;
+    color: #cec1b0;
+    color: #4e342c;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: underline;
 }
 
 .signup-card a:hover {
     text-decoration: underline;
-    color: #ffdd4d;
+    color: black;
     transform: translateY(-2px);
 }
 

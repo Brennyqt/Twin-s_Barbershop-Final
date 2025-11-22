@@ -48,7 +48,7 @@ main {
 }
 
 .profile-card .info-group label:hover {
-  color: #f1c40f;
+  color: #cec1b0;
 }
 
 .profile-card .info-group input {
@@ -66,7 +66,7 @@ main {
 
 .profile-card .edit-btn:hover,
 .profile-card .back-btn:hover {
-  background-color: black;
+  background-color: #cec1b0;
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }

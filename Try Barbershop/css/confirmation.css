@@ -56,7 +56,7 @@ main {
 
 .confirmation-details:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #cec1b0;
 }
 
 .confirmation-details p {
@@ -98,7 +98,7 @@ h2 {
 }
 
 .back-btn, .edit-btn:hover {
-    background-color: black;
+    background-color: #cec1b0;
     color: white;
     transform: scale(1.05);
 }
