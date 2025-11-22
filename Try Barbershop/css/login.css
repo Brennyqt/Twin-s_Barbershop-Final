@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins',sans-serif;
     background: white;
     color: #111;
 
@@ -20,7 +20,7 @@ body {
 /* Add this new rule to your login.css file */
 .logout-page {
     /* Set the body background to the same dark color as the login overlay */
-    background: rgba(20, 10, 0, 0.95);
+    background: white;
     /* Ensure the body is covering the full screen */
     height: 100vh;
     display: flex;
@@ -28,7 +28,7 @@ body {
     align-items: center;
 }
 
-/* We need to adjust the spinner overlay for the logout page */
+/* adjust the spinner overlay for the logout page */
 .logout-page #spinnerOverlay {
     /* Since the body is already dark, make the overlay itself transparent */
     background: transparent;
@@ -59,7 +59,7 @@ main {
 /* Login card */
 .login-card {
      background: white;
-  color: #140101;
+    color: #140101;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
@@ -104,7 +104,7 @@ main {
 }
 
 .login-card label:hover {
-    color: #f1c40f;
+    color: #cec1b0;
 }
 
 .login-card input {
@@ -132,14 +132,14 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 'Poppins',sans-serif;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 @keyframes buttonFade { to { opacity:1; transform:translateY(0); } }
 .login-card button:hover {
     
-    background: #f4b400;
+    background: #cec1b0;
     color: black;
    
 }
@@ -152,16 +152,17 @@ main {
 }
 
 .login-card a {
-    color: #f4b400;
+    color: black;
     text-decoration: none;
+    text-decoration: underline;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .login-card a:hover {
 
-    color: #f4b400;
+    color: #cec1b0;
     transform: translateY(-2px);
-    color: black;
+    
 }
 
 /* responsive */
@@ -208,7 +209,7 @@ main {
 }
 
 .overlay-card {
-    background: rgba(0, 0, 0, 0.7);
+    background: black;
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -227,28 +228,28 @@ main {
 }
 
 .overlay-card h2 {
-    color: #f1c40f;
-    text-shadow: 0 0 10px #f1c40f;
+    color: white;
+    text-shadow: 0 0 10px violet;
     margin-bottom: 0.5rem;
     animation: pulseGlow 5s infinite;
 }
 
 @keyframes pulseGlow {
-    0% { text-shadow: 0 0 5px #ddb361; }
-    50% { text-shadow: 0 0 15px #f1c40f; }
-    100% { text-shadow: 0 0 5px #ddb361; }
+    0% { text-shadow: 0 0 5px black; }
+    50% { text-shadow: 0 0 15px black; }
+    100% { text-shadow: 0 0 5px black; }
 }
 
 .overlay-card p {
     margin-bottom: 1.5rem;
-    color: #ccc;
+    color: white;
 }
 
 .spinner {
     width: 50px;
     height: 50px;
     border: 4px solid rgba(255, 255, 255, 0.2);
-    border-top: 4px solid #f1c40f;
+    border-top: 4px solid white;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto;

@@ -42,9 +42,9 @@ main p {
 }
 
 @keyframes pulse {
-    0% { text-shadow: 0 0 5px #ddb361; }
-    50% { text-shadow: 0 0 15px #f1c40f; }
-    100% { text-shadow: 0 0 5px #ddb361; }
+    0% { text-shadow: 0 0 5px green; }
+    50% { text-shadow: 0 0 15px pink; }
+    100% { text-shadow: 0 0 5px blue; }
 }
 
 @keyframes spin {

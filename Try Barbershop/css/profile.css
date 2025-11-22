@@ -41,7 +41,7 @@ main {
 
 .profile-card .info-group label {
   display: block;
-  font-weight: bold;
+  font-weight: 'Poppins',sans-serif;
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
   transition: color 0.3s ease;
@@ -64,12 +64,13 @@ main {
 
 /* ---------------- BUTTONS ---------------- */
 
-.profile-card .edit-btn:hover,
 .profile-card .back-btn:hover {
-  background-color: black;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    background-color: #cec1b0 !important;
+    color: white !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+
 
 .profile-card .profile-buttons {
   display: flex;

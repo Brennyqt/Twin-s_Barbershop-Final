@@ -46,7 +46,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #ddb361;
+  color: #cec1b0;
 }
 
 .notification-menu, .account-menu {
@@ -149,7 +149,7 @@ nav {
     display: block;
     width: 100%;
     padding: 10px 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #333;  
   }
 
   .notification-dropdown, .dropdown {

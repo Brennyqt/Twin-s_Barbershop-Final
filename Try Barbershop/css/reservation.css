@@ -78,21 +78,28 @@ form button {
   width:100%;
   padding:15px;
   margin-top:20px;
-  background:#f1c40f;
+  background:black;
+  color: white;
   border:none;
   border-radius:5px;
   cursor:pointer;
-  font-weight:bold;
-  transition:background 0.3s, transform 0.3s ease;
+  font-weight:'Poppins',sans-serif;
+  transition: background 0.3s, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: buttonFade 0.8s ease-out forwards 0.6s;
 }
 
+
 form button:hover {
-  background:black;
-  color:white;
+  background:#cec1b0;
+  color: #120901;
   transform:scale(1.05);
 }
 
-
+@keyframes buttonFade {
+  to { opacity: 1; transform: translateY(0); }
+}
 
 
 @keyframes slideDown {

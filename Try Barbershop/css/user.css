@@ -79,28 +79,29 @@ h2 {
     }
 }
 
-/*  Back Button */
+/* Back Button */
 .back-btn {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.7rem 1.5rem;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: black;
     color: white;
-    transition: background-color 0.3s, transform 0.3s, opacity 0.3s; /* Added transition for transform */
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
     opacity: 0;
-    transform: translateY(10px); /* Starts with slight translation */
+    transform: translateY(10px);
     animation: textFade 0.7s ease forwards 1.2s;
 }
 
 /* Hover effect for Back Button */
 .back-btn:hover {
-    background: #cec1b0;   /* Hover background color */
+    background: #cec1b0;  
     color: white;
-    transform: translateY(0) scale(1.05);  /* Scale effect and reset translation */
+    transform: translateY(0) scale(1.05);
 }
+
 
 /* Edit Button */
 .edit-btn {
